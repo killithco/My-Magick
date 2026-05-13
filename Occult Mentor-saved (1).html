@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Wind Magic Challenge | Learning Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mystic: {
+                            900: '#0f172a', // Deep Indigo
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        accent: {
+                            gold: '#d4af37',
+                            amethyst: '#9b59b6',
+                            sapphire: '#0f52ba',
+                            copper: '#b87333',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0f;
+            color: #f1f5f9;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(15, 82, 186, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(155, 89, 182, 0.1) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-accent {
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            height: 1px;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .day-badge {
+            background: linear-gradient(135deg, #d4af37 0%, #b87333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-accent-gold/30 selection:text-accent-gold">
+
+    <!-- Header Section -->
+    <header class="relative overflow-hidden py-24 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-block px-4 py-1 rounded-full border border-accent-gold/50 text-accent-gold text-xs font-bold tracking-[0.2em] uppercase mb-6 animate-pulse">
+                Path of the Sylphs
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 leading-tight">
+                30-Day <span class="italic text-accent-gold">Wind Magic</span> Challenge
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto italic">
+                "Welcome, seeker. The air is not empty; it is a canvas of ancient whispers and invisible power. Over the next month, we will learn to listen, command, and flow with the currents of the unseen. Let the breeze guide your spirit."
+                <br>
+                <span class="block mt-4 font-semibold text-slate-300">— Your Mentor, Elder Aris</span>
+            </p>
+        </div>
+        <!-- Decorative Background Element -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-sapphire/10 blur-[120px] rounded-full -z-0"></div>
+    </header>
+
+    <!-- Main Content: Challenge Grid -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="challenge-grid">
+            <!-- Cards will be injected here via JavaScript for better organization and data handling -->
+        </div>
+    </main>
+
+    <script>
+        const challengeData = [
+            {
+                day: 1,
+                title: "Introduction to the Element of Air",
+                topic: "The Breath of Life",
+                instructions: "Focus on breathing outdoors or near an open window, noticing the sensation of air.",
+                steps: ["Find a quiet spot outdoors.", "Close your eyes and inhale slowly through your nose.", "Notice the temperature and texture of the air.", "Exhale slowly, feeling the air leave your lungs."],
+                safety: "Sit in a stable environment, dress warmly if cold, avoid hyperventilating.",
+                reflection: "How did consciously connecting with the air change your physical and mental state?",
+                time: "10 mins",
+                discussion: "Did you notice subtle shifts in air currents? What does air mean to you?"
+            },
+            {
+                day: 2,
+                title: "Sensing Wind Direction",
+                topic: "The Compass of the Sky",
+                instructions: "Outdoors, close eyes and feel the wind. Wet a finger to determine direction. Visualize wind energy entering your space.",
+                steps: ["Face the direction you believe the wind is coming from.", "Wet your index finger to confirm.", "Visualize the wind as a glowing stream of silver light.", "Ask the wind to reveal its origin."],
+                safety: "Choose a safe, flat location away from hazards. Practice near an open window if wind is strong.",
+                reflection: "What memories or feelings arose when you faced the wind?",
+                time: "15 mins",
+                discussion: "Was determining wind direction easy? How did the wind feel?"
+            },
+            {
+                day: 3,
+                title: "Wind Cleansing",
+                topic: "Swept Away",
+                instructions: "Take an object (crystal, jewelry) outside on a breezy day. Hold it to the wind, visualizing negative energy being blown away. Speak an intention of cleansing.",
+                steps: ["Grip the object firmly.", "Hold it high above your head.", "Whisper: 'Wind of purity, carry the shadows away.'", "Visualize dark dust being swept from the surface."],
+                safety: "Hold the object tightly. Avoid standing near edges of elevated drop-offs.",
+                reflection: "How does the object feel different after its wind bath?",
+                time: "10 mins",
+                discussion: "Do you prefer wind cleansing over water or smoke? Why?"
+            },
+            {
+                day: 4,
+                title: "Listening to the Wind",
+                topic: "Whispers in the Trees",
+                instructions: "Sit beneath a tree, close eyes, and listen to the wind rustling leaves. Discern volume, pitch, and rhythm. Imagine the wind communicating a word or emotion.",
+                steps: ["Choose a tree that resonates with you.", "Close your eyes for at least 5 minutes of silence.", "Listen specifically for the 'shhh' of the leaves.", "Try to hear one word in the rustling."],
+                safety: "Do not sit under trees with dead branches or during severe weather.",
+                reflection: "What message or emotion did the wind seem to convey?",
+                time: "20 mins",
+                discussion: "How does wind through trees differ from wind through a city street? What emotions do these sounds evoke?"
+            },
+            {
+                day: 5,
+                title: "Wind Knots",
+                topic: "Binding the Breeze",
+                instructions: "Take natural cord. As a breeze blows, tie a knot, visualizing capturing wind energy. Tie three knots. Keep the cord as a talisman.",
+                steps: ["Use hemp or cotton cord.", "Wait for a distinct gust.", "Tie the first knot to capture speed.", "Tie the second for clarity.", "Tie the third for movement."],
+                safety: "Do not wrap cord around wrists or neck. Avoid unstable surfaces.",
+                reflection: "What specific intention or energy did you bind into your wind knots?",
+                time: "15 mins",
+                discussion: "When might you untie these knots? How did the wind react?"
+            },
+            {
+                day: 6,
+                title: "Feathers and Air Magic",
+                topic: "Flight of the Feather",
+                instructions: "Hold a naturally molted feather and blow gently to make it hover or spin. Practice controlling breath to manipulate movement.",
+                steps: ["Release the feather from height.", "Use your breath to keep it aloft.", "Try to guide it in a circle.", "Observe the feather's natural resistance."],
+                safety: "Ensure feather is clean and ethically sourced. Wash hands afterward.",
+                reflection: "How did controlling your breath to move the feather make you feel about your own personal power?",
+                time: "15 mins",
+                discussion: "What symbolism do feathers hold for you in wind magic?"
+            },
+            {
+                day: 7,
+                title: "Wind Scrying",
+                topic: "Reading the Currents",
+                instructions: "Watch tall grass, water, or incense smoke move in the wind. Look for patterns, shapes, or movements. Interpret them as symbols or omens.",
+                steps: ["Soften your gaze (theta state).", "Watch the waves in a field of grass.", "Note the first image that comes to mind.", "Ask: 'What does the wind want me to see?'"],
+                safety: "Ensure proper ventilation for incense. Protect eyes from blowing dust.",
+                reflection: "What shapes or symbols did you see, and what do they mean?",
+                time: "20 mins",
+                discussion: "Is scrying through movement easier or harder than static scrying?"
+            },
+            {
+                day: 8,
+                title: "Calling the Wind",
+                topic: "The Whistler Call",
+                instructions: "In an open outdoor space, whistle a clear note or sing a sustained note. Visualize your sound inviting the wind. Wait for a breeze.",
+                steps: ["Find a high point or open field.", "Take a deep breath.", "Whistle three ascending notes.", "Wait in absolute stillness for the response."],
+                safety: "Be mindful of surroundings. Do not call wind during severe weather.",
+                reflection: "Did the wind respond? How did that interaction feel?",
+                time: "10 mins",
+                discussion: "What historical myths involve whistling for the wind?"
+            },
+            {
+                day: 9,
+                title: "Wind Chimes and Energy",
+                topic: "Chimes of Clarity",
+                instructions: "Hang a wind chime. Sit near it and focus on the sound waves. Imagine the sound breaking up stagnant energy and inviting fresh air.",
+                steps: ["Choose a metal or bamboo chime.", "Hang it in a North or East corner.", "Close your eyes and vibrate with the tone.", "Visualize the sound as a ripple in water."],
+                safety: "Hang chime securely. Use a sturdy step stool if necessary.",
+                reflection: "How does the sound of the wind chime alter the energy of your living space?",
+                time: "15 mins",
+                discussion: "What materials make the best wind chimes for spiritual work?"
+            },
+            {
+                day: 10,
+                title: "Releasing Worries",
+                topic: "The Scattering",
+                instructions: "Collect dry leaves or dandelion seeds. Whisper a worry into them. Hold them out to the wind, visualizing the worry dissipating.",
+                steps: ["Hold the leaves close to your lips.", "Speak your worry clearly.", "Throw them into a strong gust.", "Do not look back at them once released."],
+                safety: "Use natural, biodegradable materials. Avoid invasive seeds.",
+                reflection: "How did your body feel physically after releasing your worry?",
+                time: "10 mins",
+                discussion: "Why is air effective for letting things go?"
+            },
+            {
+                day: 11,
+                title: "The North Wind",
+                topic: "Embracing the Chill",
+                instructions: "Focus on the North wind's energy (cold, earth, endurance). Face North outdoors. Visualize the North wind strengthening your physical body.",
+                steps: ["Determine North with a compass.", "Plant your feet firmly.", "Breathe in the cold, dense air.", "Internalize the wind's steadiness."],
+                safety: "Dress appropriately for cold weather. Do not stay out too long if freezing.",
+                reflection: "In what area of your life do you need endurance and stability?",
+                time: "10 mins",
+                discussion: "How does wind temperature change its magical properties?"
+            },
+            {
+                day: 12,
+                title: "The East Wind",
+                topic: "Dawn Breath",
+                instructions: "Focus on the East wind (dawn, new beginnings, intellect). Face East outdoors early morning. Breathe in morning air.",
+                steps: ["Wake before sunrise.", "Stand as the first light appears.", "Inhale the 'new' air of the day.", "Set an intellectual goal for the month."],
+                safety: "Stick to safe paths if walking in the dark.",
+                reflection: "What new beginning or idea did the East wind inspire?",
+                time: "10 mins",
+                discussion: "How does morning air feel energetically different from evening air?"
+            },
+            {
+                day: 13,
+                title: "The South Wind",
+                topic: "The Warm Gust",
+                instructions: "Focus on the South wind (passion, fire, rapid change). Face South. Visualize a warm wind fueling passion or a creative project.",
+                steps: ["Seek a warm breeze or sunny spot.", "Open your arms wide.", "Visualize your creative heart glowing red.", "Let the South wind fan that flame."],
+                safety: "Be cautious of dehydration on hot days. Drink water.",
+                reflection: "What passion did you feed with the South wind's energy?",
+                time: "10 mins",
+                discussion: "How do Air and Fire interact in your practice?"
+            },
+            {
+                day: 14,
+                title: "The West Wind",
+                topic: "The Twilight Breeze",
+                instructions: "Focus on the West wind (water, emotions, intuition). Face West at sunset. Let the breeze wash over you.",
+                steps: ["Go to a quiet place at dusk.", "Focus on your heart center.", "Identify a hidden sadness or joy.", "Let the wind 'wash' your spirit."],
+                safety: "Stay a safe distance from water edges at twilight.",
+                reflection: "What emotions did the West wind bring to the surface?",
+                time: "15 mins",
+                discussion: "How do Air and Water work together to heal emotions?"
+            },
+            {
+                day: 15,
+                title: "Wind Divination",
+                topic: "Capnomancy Basics",
+                instructions: "Light incense outdoors. Observe smoke direction: straight up (clarity), right (success), left (delay).",
+                steps: ["Set incense in a safe holder.", "Ask a 'yes/no' question.", "Watch the first major movement of smoke.", "Note the wind's interference as part of the answer."],
+                safety: "Practice fire safety. Do not perform in dry, high-wind conditions.",
+                reflection: "What question did you ask, and how did the wind direct the smoke?",
+                time: "15 mins",
+                discussion: "How reliable is nature-based divination compared to indoor methods?"
+            },
+            {
+                day: 16,
+                title: "Air and the Mind",
+                topic: "Clearing the Mental Fog",
+                instructions: "Outdoors, close eyes. Visualize wind blowing through your mind, sweeping away chaotic thoughts.",
+                steps: ["Sit in a cross-legged position.", "Imagine your skull is open to the sky.", "See a whirlwind cleaning your neurons.", "Exhale the 'gray' energy."],
+                safety: "Ensure you are in a safe, flat area where you will not trip.",
+                reflection: "How clear is your mind after visualizing the wind sweeping through it?",
+                time: "10 mins",
+                discussion: "How often do you feel mentally stagnant, and how can wind magic help?"
+            },
+            {
+                day: 17,
+                title: "Charging Objects",
+                topic: "Infused with the Sky",
+                instructions: "Choose an air-associated crystal. Find an elevated place. Hold the stone up and ask the wind to charge it.",
+                steps: ["Cleanse your crystal first.", "Go to a balcony or hilltop.", "Hold the stone in the air current.", "Chant: 'Breeze of wisdom, fill this stone.'"],
+                safety: "Maintain secure footing. Do not lean over railings.",
+                reflection: "What changes do you sense in your crystal after charging it?",
+                time: "10 mins",
+                discussion: "How does an air-charged object feel different from an earth-charged object?"
+            },
+            {
+                day: 18,
+                title: "Wind Catchers",
+                topic: "Weaving the Web",
+                instructions: "Create a simple wind catcher with a hoop and yarn. Intend it to catch good ideas and beneficial energies.",
+                steps: ["Loop yarn around a circular frame.", "Tie in small feathers or light beads.", "Focus on 'filtering' as you weave.", "Hang it where it will move constantly."],
+                safety: "Use scissors safely.",
+                reflection: "What kind of energies or ideas are you hoping to catch?",
+                time: "30 mins",
+                discussion: "What is the cultural history of dream catchers and wind catchers?"
+            },
+            {
+                day: 19,
+                title: "Wind and Movement",
+                topic: "The Dance of the Gale",
+                instructions: "Wear loose clothing. In a private space, move spontaneously, mimicking the wind. Sway, spin, and flow.",
+                steps: ["Put on ethereal music or use natural wind sound.", "Start with small finger movements.", "Expand into full body rotations.", "Collapse to the floor in the 'stillness'."],
+                safety: "Ensure ground is clear of tripping hazards. Do not spin too fast.",
+                reflection: "How did embodying the wind change your physical tension?",
+                time: "15 mins",
+                discussion: "Can physical movement be considered spellwork?"
+            },
+            {
+                day: 20,
+                title: "Wind Communication",
+                topic: "Messages on the Breeze",
+                instructions: "Write a short message. Read it softly to the wind, and visualize the wind carrying your words.",
+                steps: ["Keep the message concise.", "Go to a high vantage point.", "Whisper the words into a gust.", "Keep the paper as a physical anchor for the message."],
+                safety: "Do not release the paper into the wild.",
+                reflection: "Who did you send your message to, and how did it feel to release the words?",
+                time: "15 mins",
+                discussion: "Have you ever felt a gust of wind was a message from someone?"
+            },
+            {
+                day: 21,
+                title: "The Storm Wind",
+                topic: "Embracing the Gale",
+                instructions: "When a mild storm approaches, sit near a securely closed window. Meditate on the raw power of nature.",
+                steps: ["Ensure you are safe and warm.", "Watch the trees bend.", "Feel the vibration of the wind against the house.", "Acknowledge the power of destruction as a path to creation."],
+                safety: "Stay indoors. Stay away from windows if flying debris is a risk.",
+                reflection: "How does the destructive or chaotic aspect of wind magic make you feel?",
+                time: "20 mins",
+                discussion: "When is chaotic, forceful energy necessary in magic?"
+            },
+            {
+                day: 22,
+                title: "Scent and Air",
+                topic: "The Perfumed Breeze",
+                instructions: "Take a fragrant item outside. Notice how the breeze disperses the scent. Focus on air expanding energy.",
+                steps: ["Crush fresh herbs in your hand.", "Hold them toward the wind.", "Walk 'downwind' to see how far the scent travels.", "Visualize your own influence spreading similarly."],
+                safety: "Be aware of allergies.",
+                reflection: "What memory did the scent carried on the wind evoke?",
+                time: "10 mins",
+                discussion: "How can you use scent as an offering to spirits of the air?"
+            },
+            {
+                day: 23,
+                title: "Creating a Fan",
+                topic: "The Hand of the Sylph",
+                instructions: "Gather leaves or paper. Bind them to create a fan. Use it to gently direct air toward yourself.",
+                steps: ["Layer materials in a radiating pattern.", "Secure the base with cord.", "Fan yourself while chanting a calming word.", "Use it to 'clear' your altar space."],
+                safety: "Wash hands after handling natural materials.",
+                reflection: "How does self-directed wind differ energetically from natural wind?",
+                time: "30 mins",
+                discussion: "How are fans used in traditional magical ceremonies?"
+            },
+            {
+                day: 24,
+                title: "Wind Warding",
+                topic: "The Invisible Shield",
+                instructions: "Stand at your front door. Visualize a swirling vortex of wind spinning in front of the doorway.",
+                steps: ["Close your eyes and point your fingers at the door.", "Spin them in a clockwise circle.", "See a cyclone forming.", "Command it: 'Block the ill, invite the light.'"],
+                safety: "Ensure area is clear to avoid tripping.",
+                reflection: "How secure does your home feel after placing your wind ward?",
+                time: "15 mins",
+                discussion: "How long does an energetic ward last before needing a recharge?"
+            },
+            {
+                day: 25,
+                title: "Breathing Life",
+                topic: "The Breath of Magic",
+                instructions: "Write a goal on a stone. Exhale forcefully onto it, visualizing glowing light activating the intention.",
+                steps: ["Pick a small, smooth stone.", "Hold your goal clearly in your mind.", "Take the deepest breath possible.", "Blow directly onto the written word."],
+                safety: "Do not hyperventilate.",
+                reflection: "Why is breath considered the ultimate tool in air magic?",
+                time: "10 mins",
+                discussion: "How does speaking an intention differ from simply thinking it?"
+            },
+            {
+                day: 26,
+                title: "Studying Clouds",
+                topic: "Sky Castles",
+                instructions: "Outdoors, lie or sit comfortably and watch clouds move. Observe how wind shapes them.",
+                steps: ["Lie on your back in a safe meadow.", "Identify three distinct shapes.", "Watch them dissolve and become something else.", "Meditate on the transience of thought."],
+                safety: "Do not stare directly at the sun. Wear sunglasses.",
+                reflection: "What shapes did the wind carve into the clouds, and do they hold a message?",
+                time: "20 mins",
+                discussion: "How does cloud scrying connect air and water?"
+            },
+            {
+                day: 27,
+                title: "Air Elementals",
+                topic: "Greeting the Sylphs",
+                instructions: "In an open field, speak a respectful greeting to the spirits of the air (Sylphs). Offer a pinch of flour.",
+                steps: ["Stand with arms outstretched.", "Say: 'I see you, spirits of the heights.'", "Scatter a tiny amount of flour into the air.", "Listen for a soft whistle in response."],
+                safety: "Offer biodegradable items. Avoid dangerous ledges.",
+                reflection: "Did you sense any presence or shift in the air when greeting the Sylphs?",
+                time: "15 mins",
+                discussion: "What role do elemental beings play in your practice?"
+            },
+            {
+                day: 28,
+                title: "Releasing the Knots",
+                topic: "Unbinding the Breeze",
+                instructions: "Retrieve the cord with wind knots from Day 5. Go outside. Untie one knot.",
+                steps: ["Hold the cord in both hands.", "State a need for movement in your life.", "Untie the first knot slowly.", "Feel the 'rush' of energy released."],
+                safety: "Do not use sharp objects to force the knot.",
+                reflection: "How did it feel to release the stored energy of the wind?",
+                time: "10 mins",
+                discussion: "Did you notice an immediate energetic effect when the knot was undone?"
+            },
+            {
+                day: 29,
+                title: "The Stillness",
+                topic: "The Eye of the Storm",
+                instructions: "Focus on the moments of absolute stillness between breezes. Meditate on the silence.",
+                steps: ["Sit in a wind-prone area.", "Ignore the gusts.", "Tune your awareness only to the gaps of no movement.", "Find that same stillness within your chest."],
+                safety: "Dress warmly if cold.",
+                reflection: "What did the stillness teach you about the nature of the wind?",
+                time: "15 mins",
+                discussion: "Why is silence and stillness important in air magic?"
+            },
+            {
+                day: 30,
+                title: "Integration",
+                topic: "Master of the Winds",
+                instructions: "Create a small altar space for air. Include items gathered over the past 29 days. Stand before it and state gratitude.",
+                steps: ["Arrange your cord, feather, stone, and catcher.", "Light a final stick of incense.", "Take three deep, intentional breaths.", "Commit to keeping your air practice alive."],
+                safety: "Keep lightweight items away from open flames.",
+                reflection: "How has your relationship with air evolved over these 30 days?",
+                time: "20 mins",
+                discussion: "Which exercise was your favorite, and how will you incorporate it?"
+            }
+        ];
+
+        const grid = document.getElementById('challenge-grid');
+
+        challengeData.forEach(item => {
+            const card = document.createElement('div');
+            card.className = "glass-card rounded-3xl p-8 flex flex-col h-full";
+            
+            card.innerHTML = `
+                <div class="flex justify-between items-start mb-6">
+                    <span class="day-badge font-serif text-3xl font-bold tracking-tighter">Day ${item.day}</span>
+                    <div class="flex items-center gap-2 text-slate-400 text-xs font-semibold">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        ${item.time}
+                    </div>
+                </div>
+
+                <h2 class="font-serif text-2xl text-accent-gold mb-1">${item.title}</h2>
+                <h3 class="text-slate-400 text-sm font-medium uppercase tracking-widest mb-6">${item.topic}</h3>
+                
+                <div class="space-y-4 flex-grow">
+                    <p class="text-slate-200 text-sm leading-relaxed">${item.instructions}</p>
+                    <ul class="space-y-2">
+                        ${item.steps.map(step => `
+                            <li class="flex items-start gap-3 text-sm text-slate-400">
+                                <span class="text-accent-gold mt-1">•</span>
+                                <span>${step}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+
+                <div class="mt-8 space-y-4">
+                    <div class="p-4 rounded-2xl bg-white/5 border border-white/5">
+                        <h4 class="text-xs font-bold uppercase tracking-tighter text-accent-sapphire mb-2">Reflection Prompt</h4>
+                        <p class="text-sm italic text-slate-300">"${item.reflection}"</p>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-accent-gold/5 border border-accent-gold/10">
+                        <h4 class="text-xs font-bold uppercase tracking-tighter text-accent-gold mb-2">Discussion</h4>
+                        <p class="text-sm text-slate-300">${item.discussion}</p>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-[10px] text-red-400/70 uppercase tracking-widest pt-2">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                        Safety: ${item.safety}
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>

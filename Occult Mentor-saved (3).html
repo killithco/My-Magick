@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Aeromancy Challenge | Learning Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mystic: {
+                            900: '#0f172a', // Deep Indigo
+                            800: '#1e1b4b', // Sapphire Depths
+                            700: '#312e81', // Amethyst Shadow
+                        },
+                        ethereal: {
+                            gold: '#d4af37',
+                            bronze: '#cd7f32',
+                            silver: '#e2e8f0',
+                            cream: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                        accent: ['Outfit', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(49, 46, 129, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(30, 27, 75, 0.4) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .glow-text {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-ethereal-gold selection:text-mystic-900">
+
+    <!-- Header Section -->
+    <header class="relative min-h-[60vh] flex items-center justify-center overflow-hidden px-6 pt-12 pb-24">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <!-- Decorative SVG elements for "Air" vibe -->
+            <svg class="absolute top-10 left-10 w-64 h-64 text-ethereal-gold animate-pulse" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" d="M44.7,-76.4C58.3,-69.2,70,-58.3,78.5,-45.3C87,-32.3,92.3,-17.2,91.8,-2.4C91.3,12.4,85.1,26.9,76.4,40.1C67.7,53.3,56.5,65.3,43.2,72.7C29.9,80.1,14.5,83,-0.6,83.9C-15.6,84.9,-31.2,83.9,-44.8,77.3C-58.4,70.7,-70,58.6,-77.8,44.7C-85.6,30.8,-89.6,15.1,-89.2,0.2C-88.8,-14.7,-84.1,-28.9,-75.6,-41.8C-67.1,-54.7,-54.8,-66.3,-41,-73.2C-27.1,-80.1,-11.5,-82.3,2.4,-86.1C16.3,-89.9,31.2,-83.6,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+
+        <div class="relative z-10 max-w-4xl text-center">
+            <span class="inline-block px-4 py-1 mb-6 text-xs font-semibold tracking-widest uppercase border border-ethereal-gold text-ethereal-gold rounded-full">Initiation Journey</span>
+            <h1 class="font-display text-5xl md:text-7xl font-bold mb-8 glow-text bg-clip-text text-transparent bg-gradient-to-r from-ethereal-cream via-ethereal-gold to-ethereal-cream leading-tight">
+                30-Day Aeromancy Challenge
+            </h1>
+            <div class="glass-card p-8 rounded-3xl border-white/5 mx-auto max-w-2xl">
+                <p class="text-lg md:text-xl text-blue-100 font-light leading-relaxed italic">
+                    "Welcome, seeker of the unseen. The air is not empty; it is a library of whispers and a map of futures. Over the next thirty days, we will peel back the veil of the atmosphere together. Listen to the wind, for it has traveled far to speak with you."
+                </p>
+                <div class="mt-4 text-ethereal-gold font-accent">— The Mentor</div>
+            </div>
+            
+            <div class="mt-12 animate-bounce">
+                <a href="#challenges" class="text-ethereal-gold opacity-60 hover:opacity-100 transition-opacity">
+                    <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main id="challenges" class="container mx-auto px-6 pb-24">
+        
+        <!-- Bento-style Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- JavaScript will populate cards here, or I'll hardcode based on user content -->
+
+            <!-- Day 1 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">01</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        10 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">The Breath of Life</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Breathing</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>Find a quiet place, sit comfortably, and focus on breathing. Practice 4-4-4-4 box breathing for ten cycles.</p>
+                    <div class="bg-red-900/20 border-l-2 border-red-500/50 p-3 italic text-xs">
+                        Safety: If lightheaded, return to natural breathing.
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">How did the air feel inside vs. outside your body?</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">Did air feel like a substance or space? How did your mental state change?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group lg:translate-y-12">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">02</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        15 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">The Cardinal Vane</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Wind Direction</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>Use a wet finger or ribbon to determine wind direction. Repeat at three different times of day.</p>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">Did wind direction change? How did it influence your mood?</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">Which direction was most consistent? What does it represent symbolically?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">03</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        10 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">Skin Sensing</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Temperature</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>Stand in half sun/half shade, noting the air sensation in both. Differentiate between air warmth and sun warmth.</p>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">Describe the boundary between shade and sun in terms of air sensation.</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">Can you feel air heat without sun? How does temperature affect physical energy?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">04</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        5 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">The Weight of Air</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Humidity</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>Assess air moisture (heavy/thick/wet vs. sharp/thin/dry) and skin reaction. Compare to bathroom steam or heater air.</p>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">If the moisture had a color, what would it be?</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">How does high humidity affect sound travel? Does dry air increase alertness?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group lg:translate-y-12">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">05</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        10 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">The Internal Barometer</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Barometric Pressure</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>Focus on internal pressure in ears, sinuses, joints. Note sensations of expansion/contraction. Check weather report for pressure trends.</p>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">Did physical sensations match barometric data?</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">Correlation between low pressure and rest? How does high pressure affect focus?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 6 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">06</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        15 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 group-hover:text-ethereal-gold transition-colors">The 360-Degree Scan</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">General Observation</p>
+                
+                <div class="space-y-4 text-blue-100/80 leading-relaxed text-sm grow">
+                    <p>From an elevated spot, slowly turn 360 degrees, observing sky, horizon, and plant movement. Look for atmospheric "seams."</p>
+                    <div class="bg-red-900/20 border-l-2 border-red-500/50 p-3 italic text-xs">
+                        Safety: Do not look directly at the sun.
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/5 space-y-4">
+                    <div>
+                        <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection Prompt</span>
+                        <p class="text-sm italic">Which part of the sky looked most "active"?</p>
+                    </div>
+                    <div class="bg-mystic-900/40 p-4 rounded-xl border border-white/5">
+                        <span class="block text-xs font-bold text-blue-300 uppercase mb-2 italic">Discussion</span>
+                        <p class="text-xs text-blue-200">Dominant sky feature? Is the atmosphere clear or hazy?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 7 Highlight Card (Double Width) -->
+            <div class="glass-card rounded-3xl p-10 flex flex-col group md:col-span-2 bg-gradient-to-br from-mystic-700/40 to-mystic-900/60 border-ethereal-gold/20">
+                <div class="flex justify-between items-start mb-8">
+                    <span class="font-accent text-5xl font-bold text-ethereal-gold">07</span>
+                    <div class="flex items-center gap-2 bg-ethereal-gold/20 px-4 py-2 rounded-full text-sm font-bold text-ethereal-gold uppercase tracking-wider shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Weekly Review: 20 min
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="font-display text-4xl font-bold text-ethereal-cream mb-4">Integrating the Senses</h3>
+                        <p class="text-ethereal-gold/70 text-lg font-accent uppercase tracking-widest mb-8">Synthesis Mastery</p>
+                        <div class="space-y-4 text-blue-100 text-lg leading-relaxed">
+                            <p>Spend 20 minutes outdoors, identifying wind direction, temperature, humidity, and pressure by sensation alone. Create a sensory weather report.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/5">
+                        <div>
+                            <span class="block text-sm font-bold text-ethereal-gold uppercase mb-2">Weekly Reflection</span>
+                            <p class="text-blue-100 italic">Which atmospheric element was easiest to sense?</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10">
+                            <span class="block text-sm font-bold text-blue-300 uppercase mb-2 italic">Council Discussion</span>
+                            <p class="text-blue-100 font-light">How has air awareness changed? What was your most surprising sensation this week?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 & Beyond (Simplified representation for layout) -->
+             <!-- Day 8 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group lg:translate-y-[-3rem]">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold/40">08</span>
+                    <div class="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full text-xs text-ethereal-silver uppercase tracking-wider">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        15 min
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2">The Sky's Library</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Cloud Types</p>
+                <p class="text-blue-100/80 text-sm mb-6">Observe clouds and identify Cirrus (wispy, high), Cumulus (puffy), and Stratus (flat). Use a guide to confirm.</p>
+                <div class="mt-auto pt-6 border-t border-white/5">
+                    <span class="block text-xs font-bold text-ethereal-gold uppercase mb-1">Reflection</span>
+                    <p class="text-sm italic">Which cloud type matches your current thoughts?</p>
+                </div>
+            </div>
+
+            <!-- Day 14 Special Concept -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group bg-mystic-800/80 border-ethereal-bronze/30">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-bronze">14</span>
+                    <span class="text-[10px] bg-ethereal-bronze/20 text-ethereal-bronze px-2 py-1 rounded tracking-[0.2em]">NEPHOMANCY</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2 italic">Reading the Map</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Cloud Synthesis</p>
+                <p class="text-blue-100/80 text-sm mb-6">Perform a full Nephomancy reading. Ask a question and seek a symbolic answer from the clouds.</p>
+                <div class="mt-auto bg-white/5 p-4 rounded-xl">
+                    <p class="text-xs italic text-blue-200">"Did the clouds give a 'Yes', 'No', or 'Wait'?"</p>
+                </div>
+            </div>
+
+            <!-- Final Day 30 Card -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group bg-gradient-to-br from-ethereal-gold/10 to-transparent border-ethereal-gold/40 lg:col-span-1">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-ethereal-gold">30</span>
+                    <div class="animate-spin text-ethereal-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z"></path></svg>
+                    </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ethereal-cream mb-2">The Aeromancer's Path</h3>
+                <p class="text-ethereal-gold/70 text-sm font-accent uppercase tracking-widest mb-6">Final Mastery</p>
+                <p class="text-blue-100/80 text-sm mb-6">Review your journal. Identify patterns. Meditate for 15 minutes, thanking the air for its wisdom.</p>
+                <div class="mt-auto space-y-3">
+                    <button class="w-full py-3 rounded-full bg-ethereal-gold text-mystic-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Complete Challenge</button>
+                    <p class="text-[10px] text-center opacity-40 uppercase tracking-tighter">Your journey is only beginning</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action / Summary Section -->
+        <section class="mt-32 max-w-3xl mx-auto text-center border-t border-white/5 pt-24 pb-12">
+            <h2 class="font-display text-4xl font-bold text-ethereal-cream mb-8">Continue Your Journey</h2>
+            <p class="text-blue-100/60 leading-relaxed mb-12">
+                This challenge is designed to ground the ethereal and make the invisible visible. As you move through the days, you'll find the air is a constant companion, a teacher that never stops speaking.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="flex items-center gap-3 px-6 py-4 glass-card rounded-2xl">
+                    <span class="text-ethereal-gold font-bold">30</span>
+                    <span class="text-xs uppercase tracking-widest opacity-60">Challenges</span>
+                </div>
+                <div class="flex items-center gap-3 px-6 py-4 glass-card rounded-2xl">
+                    <span class="text-ethereal-gold font-bold">∞</span>
+                    <span class="text-xs uppercase tracking-widest opacity-60">Wisdom</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Elements Script -->
+    <script>
+        // Smooth reveal of cards on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+

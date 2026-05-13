@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Somatic Magic Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mystic: {
+                            900: '#0a0a14',
+                            800: '#14142b',
+                            700: '#1e1b4b',
+                            deep: '#2e1065',
+                        },
+                        amethyst: {
+                            DEFAULT: '#7c3aed',
+                            light: '#a78bfa',
+                            dark: '#4c1d95',
+                        },
+                        gold: {
+                            DEFAULT: '#fbbf24',
+                            glow: '#fcd34d',
+                            dark: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a14;
+            color: #f8fafc;
+            background-image: radial-gradient(circle at 50% -20%, #2e1065 0%, #0a0a14 60%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(30, 27, 75, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(251, 191, 36, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            background: rgba(30, 27, 75, 0.6);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2e1065;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+<body class="font-sans selection:bg-amethyst/30">
+
+    <!-- Header Section -->
+    <header class="relative pt-20 pb-32 px-6 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-block px-4 py-1 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm tracking-widest uppercase mb-6 font-semibold">Initiation Journey</span>
+            <h1 class="font-serif text-5xl md:text-7xl mb-8 leading-tight gold-gradient-text">
+                30-Day Somatic Magic Challenge
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-300 font-light italic leading-relaxed">
+                "Welcome, seeker. Your body is the most ancient and powerful tool in your magical arsenal. Over the next thirty days, we will awaken the dormant pathways between your physical form and your energetic will. Move slowly, listen deeply, and trust the wisdom of your bones."
+                <span class="block mt-4 text-amethyst-light font-normal not-italic">— Your Mentor in the Craft</span>
+            </p>
+        </div>
+        <!-- Decorative Orbs -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-amethyst/20 rounded-full blur-[120px] -z-10"></div>
+        <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-gold/10 rounded-full blur-[100px] -z-10"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-6 pb-24">
+        <div id="challenge-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Day 1 -->
+            <article class="glass-card rounded-3xl p-8 flex flex-col h-full scroll-reveal">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-serif text-4xl text-gold/60 italic">Day 01</span>
+                    <div class="flex items-center text-xs font-medium text-slate-400 bg-black/30 px-3 py-1 rounded-full">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        10 min
+                    </div>
+                </div>
+                <h3 class="font-serif text-2xl text-white mb-2">Foundational Awareness</h3>
+                <h4 class="text-amethyst-light text-sm uppercase tracking-widest font-semibold mb-6">The Somatic Baseline</h4>
+                
+                <div class="text-slate-300 text-sm leading-relaxed mb-8 flex-grow space-y-4">
+                    <p>Find a quiet space, sit or lie down comfortably, close eyes, and bring attention to toes, scanning up the body to notice tension, warmth, cold, or numbness without judgment.</p>
+                    <div class="bg-black/20 p-4 rounded-xl border-l-2 border-amethyst/50">
+                        <p class="text-xs font-bold text-amethyst-light mb-1">SAFETY FIRST</p>
+                        <p class="text-xs">If overwhelmed, open eyes, look around, and pat thighs/arms. Continue scan to the head, take three deep breaths, and open eyes.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <h5 class="text-gold/80 text-xs font-bold uppercase mb-2 tracking-tighter">Reflection Prompt</h5>
+                        <p class="text-sm italic text-slate-200">Which parts of your body felt most vibrant and present, and which felt distant, tense, or numb?</p>
+                    </div>
+                    <div class="p-4 bg-amethyst/5 rounded-2xl border border-amethyst/10">
+                        <h5 class="text-amethyst-light text-xs font-bold uppercase mb-2 tracking-tighter">Discussion</h5>
+                        <p class="text-sm text-slate-300">How often do you actively listen to your body? Did you discover any hidden tension?</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Remaining 29 days will be generated similarly via script for performance and clean code, but here's the mapping for a subset to ensure layout -->
+            <!-- Note: In a real app we'd map the data, here I will include the full set as requested -->
+        </div>
+    </main>
+
+    <script>
+        const challenges = [
+            { day: 1, title: "Foundational Awareness", topic: "The Somatic Baseline", time: "10 min", instructions: "Find a quiet space, sit or lie down comfortably, close eyes, and bring attention to toes, scanning up the body to notice tension, warmth, cold, or numbness without judgment.", safety: "If overwhelmed, open eyes, look around, and pat thighs/arms. Continue scan to the head, take three deep breaths, and open eyes.", prompt: "Which parts of your body felt most vibrant and present, and which felt distant, tense, or numb?", discussion: "How often do you actively listen to your body without trying to change it? Did you discover any hidden tension?" },
+            { day: 2, title: "Breath and Energy", topic: "The Anchor Breath", time: "5-10 min", instructions: "Sit upright, place one hand on chest and one on belly. Breathe in slowly through the nose, directing air to belly. Imagine breath as soft light, exhale as release. Repeat ten times.", safety: "If dizzy, return to normal breathing. Do not force.", prompt: "How did the physical sensation of your breath change your mental state?", discussion: "Is belly breathing difficult or unnatural? How can you use this anchor breath daily?" },
+            { day: 3, title: "Grounding", topic: "Roots of the Earth", time: "10 min", instructions: "Stand barefoot, feet shoulder-width apart. Focus on soles, imagine energetic roots growing deep into the earth. Inhale stability; exhale nervous energy down roots.", safety: "Can be done seated. Keep legs straight but not locked if knee issues.", prompt: "Describe the sensation of being physically and energetically tethered to the earth.", discussion: "What physical sensations tell you that you are ungrounded?" },
+            { day: 4, title: "Energy Centers", topic: "Waking the Hands", time: "5-8 min", instructions: "Sit comfortably, palms facing each other, an inch apart. Focus on the space between palms, noticing heat, tingling, or pulsing. Move hands slowly like playing with a sponge ball.", safety: "Rest elbows if arms tire. No right or wrong feeling.", prompt: "What specific physical sensations did you feel between your hands?", discussion: "Did the sensation feel internal or external? How might you use this awakened hand energy?" },
+            { day: 5, title: "Somatic Boundaries", topic: "The Skin Envelope", time: "10 min", instructions: "Rub or tap arms, chest, legs, face. Mentally repeat, 'This is my edge, this is my boundary.' Visualize skin as a glowing, protective barrier.", safety: "Be mindful of bruises. Use gentle strokes if tapping is too aggressive. Finish with a hug.", prompt: "How does acknowledging your physical boundary change your sense of personal safety?", discussion: "Do you tend to absorb other people's energy easily?" },
+            { day: 6, title: "Generating Energy", topic: "The Friction Fire", time: "5 min", instructions: "Rub palms vigorously together. Focus on heat. Hover warm palms over tense or needy body parts, letting heat sink in.", safety: "Do not rub hard enough to chafe. Be gentle on sensitive areas.", prompt: "How did the generated heat change the feeling of the tense area?", discussion: "How does physical friction translate to magical generation?" },
+            { day: 7, title: "Emotional Release", topic: "The Shake Out", time: "5 min", instructions: "Stand in an open area. Bounce on heels. Shake hands, arms, then whole body. Imagine shaking off stress and stagnant magic. Stop suddenly and notice the rush.", safety: "Modify if mobility limits. Do not snap neck/joints aggressively.", prompt: "Describe the sensation in your body immediately after you stopped shaking.", discussion: "Why is physical shaking effective for resetting the nervous system?" },
+            { day: 8, title: "Somatic Signatures", topic: "Locating the Yes and No", time: "10 min", instructions: "Think of something you love; notice where this feeling lives (Yes). Clear mind, think of something you dislike; notice the reaction (No).", safety: "Keep negative thought mild (e.g., disliked food) to avoid trauma.", prompt: "Exactly where and how do your personal somatic Yes and No manifest?", discussion: "Can your mind be tricked while your body tells the truth?" },
+            { day: 9, title: "Directing Energy", topic: "The Palm Sweep", time: "5 min", instructions: "Sweep dominant hand down opposite arm, two inches above skin, smoothing invisible static. Sweep torso and legs, flicking fingers toward floor to cast off static.", safety: "If unable to reach, visualize the energy flowing down and out.", prompt: "Did you feel a change in your body's atmosphere after sweeping?", discussion: "How does the gesture influence your energetic perception?" },
+            { day: 10, title: "Auric Awareness", topic: "Pushing the Bubble", time: "10 min", instructions: "Imagine sitting inside a deflated bubble. Push hands outward in all directions, expanding the bubble to an arm's length. Feel the imaginary resistance.", safety: "If boundary brings isolation, remind yourself it's a filter, not a wall.", prompt: "What did the resistance of your aura feel like against your hands?", discussion: "Do you usually keep your energy contracted or expanded?" },
+            { day: 11, title: "Vocal Integration", topic: "The Resonant Hum", time: "10 min", instructions: "Exhale with a continuous hum. Focus on vibration in the chest, throat, or lips. Alter pitch and notice how vibration moves.", safety: "Do not strain vocal cords. Stop if lightheaded.", prompt: "Which pitch produced the most soothing vibration today?", discussion: "How is sound a physical manifestation of energy?" },
+            { day: 12, title: "Fluidity", topic: "Spinal Undulation", time: "8 min", instructions: "Move spine in slow, fluid circles like stirring a pot. Imagine spine as a flexible conduit clearing blockages.", safety: "Move gently. If back injuries, make circles small or visualize movement.", prompt: "How did the quality of your movement change during the practice?", discussion: "Why is the spine considered a central pillar in energetic work?" },
+            { day: 13, title: "Intuitive Movement", topic: "The Body Leads", time: "5-10 min", instructions: "Drop conscious control. Ask body how it wants to move. Do not plan; follow any impulse for five minutes.", safety: "Keep eyes slightly open for balance. Ensure space is clear.", prompt: "What movements did your body ask for, and what emotion was attached?", discussion: "How difficult was it to stop planning movements?" },
+            { day: 14, title: "Tension Release", topic: "The Sigh of the Beast", time: "5 min", instructions: "Inhale, tense every safe muscle for three seconds. Exhale with a loud sigh, releasing all tension. Repeat three times.", safety: "Do not tense to point of cramping. If heart issues, tense gently.", prompt: "Describe the rush of sensation at the moment of physical release.", discussion: "How much energy does it take to maintain chronic tension?" },
+            { day: 15, title: "Centering", topic: "The Plumb Line", time: "8 min", instructions: "Stand straight. Imagine a plumb line from head to floor. Sway gently until you find the exact center of gravity.", safety: "Stand near wall if prone to vertigo. Keep knees slightly soft.", prompt: "Did your physical center feel different than your usual posture?", discussion: "Why is finding your center important before spellwork?" },
+            { day: 16, title: "Sacred Gestures", topic: "Crafting a Mudra", time: "10 min", instructions: "Choose an intention (peace, courage). Form a hand shape that physically represents it. Hold firmly while breathing into the posture.", safety: "Do not force fingers into painful positions.", prompt: "Sketch or describe the gesture. Why does this shape represent your intention?", discussion: "How can you use this gesture discreetly in public?" },
+            { day: 17, title: "Movement as Ritual", topic: "The Magic Walk", time: "10 min", instructions: "Walk at half speed. Pay hyper-focus to foot strike and weight shift. Feel yourself walking your intention into reality.", safety: "If using aids, focus on their contact with the ground.", prompt: "How did slowing down alter your perception of a mundane action?", discussion: "Can walking itself become a spell?" },
+            { day: 18, title: "Spatial Geometry", topic: "Drawing in the Air", time: "5 min", instructions: "Trace a large, invisible symbol in the air using your whole arm. Step forward through the center, absorbing its energy.", safety: "Ensure room to extend arm. Do not hyperextend shoulder.", prompt: "What color was the light you visualized while drawing?", discussion: "How does whole-body movement change symbol work?" },
+            { day: 19, title: "Elemental Embodiment", topic: "The Water Flow", time: "10 min", instructions: "Move as if submerged in water. Let arms float, spine undulate. Channel adaptability and emotional depth.", safety: "If emotionally overwhelmed, stop and plant feet.", prompt: "What emotions surfaced while embodying water?", discussion: "How can moving like water help with rigid obstacles?" },
+            { day: 20, title: "Elemental Embodiment", topic: "The Earth Stance", time: "5 min", instructions: "Wide squat, press feet into floor. Embody stability and immovable strength. Hold as long as comfortable.", safety: "If leg pain, modify by sitting and pressing feet hard into floor.", prompt: "How did the physical effort change your mental state?", discussion: "How does physical endurance relate to magical willpower?" },
+            { day: 21, title: "Elemental Embodiment", topic: "The Fire Pulse", time: "5 min", instructions: "Make rapid, sharp movements. Flick fingers, punch air lightly. Breathe faster, pulling energy from the core.", safety: "Do not hyperventilate. Keep movements sharp but controlled.", prompt: "Where in your life do you need the transformative energy of fire?", discussion: "Is fire energy harder for you to control than earth?" },
+            { day: 22, title: "Elemental Embodiment", topic: "The Air Lift", time: "8 min", instructions: "Move with extreme lightness. Rise onto toes. Lift chest and neck. Let your mind be untethered.", safety: "Be careful rising on toes. If seated, focus on chest lift.", prompt: "Did embodying air make you feel clear or scattered?", discussion: "When can detached air magic help with burdens?" },
+            { day: 23, title: "Anchoring States", topic: "The Trigger Touch", time: "10 min", instructions: "Recall a moment of power. At the peak, press thumb and middle finger firmly for ten seconds. Release and test later.", safety: "Do not use trauma memories. Choose pure positive power.", prompt: "How strong was the echo when you triggered the anchor later?", discussion: "How can this help before difficult conversations?" },
+            { day: 24, title: "Posture of Power", topic: "Expanding the Frame", time: "5 min", instructions: "Adopt a posture of defeat, then reverse to a posture of power (chest up, chin raised, hands on hips). Hold for two minutes.", safety: "Do not force spine into painful arches.", prompt: "How did changing your posture alter your sense of authority?", discussion: "Do you habitually shrink your body in certain environments?" },
+            { day: 25, title: "Somatic Projection", topic: "Charging the Stone", time: "10 min", instructions: "Hold a small object. Generate a feeling, visualize it flowing down arm into object while rhythmically squeezing.", safety: "Do not squeeze sharp objects. Maintain grounding breath.", prompt: "Does the object feel physically different now?", discussion: "How does using the body as a conduit differ from visualization?" },
+            { day: 26, title: "Shapeshifting", topic: "The Animal Archetype", time: "10 min", instructions: "Mimic the movements of an animal you admire. Shift your mindset to match its physical traits.", safety: "Ensure space is safe. Do not perform movements that strain joints.", prompt: "What physical trait made you feel most connected to the animal?", discussion: "How does altering form change psychological perspective?" },
+            { day: 27, title: "Rhythm and Trance", topic: "The Metronome Sway", time: "10-15 min", instructions: "Sway body in time with a drum beat (60-70 bpm). Let it be mechanical. Allow eyes to lose focus.", safety: "Set alarm. If nauseous, stop and eat a snack to ground.", prompt: "Did movement ever feel like it was happening on its own?", discussion: "Why has rhythm been used for trance throughout history?" },
+            { day: 28, title: "Somatic Shielding", topic: "The Iron Skin", time: "8 min", instructions: "Tense muscles just beneath skin lightly. Visualize skin hardening into metallic armor. Declare your perimeter secure.", safety: "Do not hold breath. Soften muscles afterward.", prompt: "How did creating armor change your perception of vulnerability?", discussion: "When is it important to take off this shield?" },
+            { day: 29, title: "Somatic Manifestation", topic: "The Dance of Arrival", time: "10 min", instructions: "Imagine you've achieved your goal. Dance or move to express that celebration. Saturate your nervous system with success.", safety: "Move within physical limits. Let go of feeling silly.", prompt: "How did embodying success beforehand change your belief?", discussion: "How does feeling the physical reality draw it closer?" },
+            { day: 30, title: "Integration", topic: "The Complete Somatic Ritual", time: "15 min", instructions: "Design a 5-min ritual using past elements: Breath, Sweep, Gesture, Embodiment, Shake, and Roots.", safety: "Listen to body; string movements together naturally.", prompt: "How has your relationship with your body as a magical tool transformed?", discussion: "Which practice was most powerful? How will you continue?" }
+        ];
+
+        const grid = document.getElementById('challenge-grid');
+        
+        // Skip the first one as it's already in the HTML for static reference
+        challenges.forEach((c, index) => {
+            if(index === 0) return; 
+
+            const card = document.createElement('article');
+            card.className = "glass-card rounded-3xl p-8 flex flex-col h-full scroll-reveal";
+            card.innerHTML = `
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-serif text-4xl text-gold/60 italic">Day ${c.day.toString().padStart(2, '0')}</span>
+                    <div class="flex items-center text-xs font-medium text-slate-400 bg-black/30 px-3 py-1 rounded-full">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        ${c.time}
+                    </div>
+                </div>
+                <h3 class="font-serif text-2xl text-white mb-2">${c.title}</h3>
+                <h4 class="text-amethyst-light text-sm uppercase tracking-widest font-semibold mb-6">${c.topic}</h4>
+                
+                <div class="text-slate-300 text-sm leading-relaxed mb-8 flex-grow space-y-4">
+                    <p>${c.instructions}</p>
+                    <div class="bg-black/20 p-4 rounded-xl border-l-2 border-amethyst/50">
+                        <p class="text-xs font-bold text-amethyst-light mb-1 uppercase tracking-wider">Safety Guidance</p>
+                        <p class="text-xs">${c.safety}</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <h5 class="text-gold/80 text-xs font-bold uppercase mb-2 tracking-tighter">Reflection Prompt</h5>
+                        <p class="text-sm italic text-slate-200 line-clamp-3 hover:line-clamp-none transition-all duration-500">${c.prompt}</p>
+                    </div>
+                    <div class="p-4 bg-amethyst/5 rounded-2xl border border-amethyst/10">
+                        <h5 class="text-amethyst-light text-xs font-bold uppercase mb-2 tracking-tighter">Discussion Point</h5>
+                        <p class="text-sm text-slate-300">${c.discussion}</p>
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+
