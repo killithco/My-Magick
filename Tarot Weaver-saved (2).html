@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starseed Heritage Tarot Spread</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            black: '#050508',
+                            midnight: '#0c0c1e',
+                            purple: '#1a0b2e',
+                            deep: '#2d1b4e',
+                        },
+                        accent: {
+                            gold: '#d4af37',
+                            softGold: '#e5c05b',
+                            silver: '#c0c0c0',
+                            ivory: '#fdfaf1',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        body: ['"Outfit"', 'sans-serif'],
+                        secondarySerif: ['"Lora"', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at 50% 0%, #1a0b2e 0%, #0c0c1e 50%, #050508 100%);
+            color: #fdfaf1;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to bottom, #fdfaf1 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            opacity: 0.15;
+            position: absolute;
+            top: -0.5rem;
+            right: 1.5rem;
+            color: #d4af37;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #050508;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2d1b4e;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-accent-gold selection:text-cosmic-black custom-scrollbar">
+
+    <!-- Decorative Stars Background -->
+    <div class="stars-container" id="stars"></div>
+
+    <header class="relative pt-24 pb-16 px-6 overflow-hidden">
+        <!-- Floating accent orbs -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-cosmic-purple/20 rounded-full blur-[120px] -z-10 animate-pulse-slow"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative">
+            <div class="mb-4 flex items-center justify-center gap-4 opacity-70">
+                <div class="h-[1px] w-12 bg-accent-gold"></div>
+                <span class="uppercase tracking-[0.3em] text-xs font-semibold text-accent-gold">The Celestial Journey</span>
+                <div class="h-[1px] w-12 bg-accent-gold"></div>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-8 gradient-text tracking-tight">
+                Starseed Heritage
+            </h1>
+            
+            <p class="font-secondarySerif italic text-lg md:text-xl text-accent-ivory/80 leading-relaxed max-w-2xl mx-auto">
+                This five-card spread is designed to connect you with your cosmic origins and understand your unique soul journey as a Starseed. 
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pb-32">
+        <!-- Intro Text Block -->
+        <div class="mb-16 text-center">
+            <p class="text-accent-ivory/70 leading-loose text-lg font-light">
+                It offers insights into your celestial lineage, your current mission on Earth, and the gifts you carry. Embrace the mystery of your stellar ancestry.
+            </p>
+            <div class="mt-12 flex justify-center">
+                <div class="w-px h-16 bg-gradient-to-b from-accent-gold to-transparent opacity-40"></div>
+            </div>
+        </div>
+
+        <!-- Card Grid/Flow -->
+        <div class="space-y-12">
+            
+            <!-- Card 1 -->
+            <article class="glass-card p-8 md:p-10 rounded-2xl relative group">
+                <span class="card-number">01</span>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-accent-gold mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 rounded-full border border-accent-gold/30 flex items-center justify-center text-sm font-body">1</span>
+                        Your Starseed Origin
+                    </h2>
+                    <p class="text-accent-ivory/80 leading-relaxed text-lg font-light">
+                        This card reveals the primary star system or galactic heritage your soul most closely aligns with, offering a glimpse into your soul's true home. It reflects the core vibration and architectural blueprint of your consciousness.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="glass-card p-8 md:p-10 rounded-2xl relative group">
+                <span class="card-number">02</span>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-accent-gold mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 rounded-full border border-accent-gold/30 flex items-center justify-center text-sm font-body">2</span>
+                        Your Earthly Mission
+                    </h2>
+                    <p class="text-accent-ivory/80 leading-relaxed text-lg font-light">
+                        This position illuminates the core purpose or specific tasks you are here to accomplish in this lifetime, guiding you toward your highest service. It acts as a compass for your soul's contribution to the collective evolution of Earth.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="glass-card p-8 md:p-10 rounded-2xl relative group">
+                <span class="card-number">03</span>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-accent-gold mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 rounded-full border border-accent-gold/30 flex items-center justify-center text-sm font-body">3</span>
+                        Challenges & Lessons
+                    </h2>
+                    <p class="text-accent-ivory/80 leading-relaxed text-lg font-light">
+                        This card highlights the unique difficulties or energetic blocks you may encounter as a Starseed, along with the spiritual lessons embedded within them. These challenges often involve grounding celestial energy into a dense physical reality.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="glass-card p-8 md:p-10 rounded-2xl relative group">
+                <span class="card-number">04</span>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-accent-gold mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 rounded-full border border-accent-gold/30 flex items-center justify-center text-sm font-body">4</span>
+                        Gifts & Abilities
+                    </h2>
+                    <p class="text-accent-ivory/80 leading-relaxed text-lg font-light">
+                        Discover the inherent talents, intuitive strengths, or unique perspectives you bring from your star lineage to assist yourself and humanity. These are your "tools of trade," often manifesting as natural empathy, healing touch, or visionary thinking.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="glass-card p-8 md:p-10 rounded-2xl relative group overflow-hidden">
+                <div class="absolute bottom-0 right-0 w-32 h-32 bg-accent-gold/5 blur-3xl -z-0"></div>
+                <span class="card-number">05</span>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-accent-gold mb-6 flex items-center gap-4">
+                        <span class="w-8 h-8 rounded-full border border-accent-gold/30 flex items-center justify-center text-sm font-body">5</span>
+                        Guidance for Integration
+                    </h2>
+                    <p class="text-accent-ivory/80 leading-relaxed text-lg font-light">
+                        This final card offers practical advice or a message to help you integrate your Starseed identity with your human experience, fostering balance and fulfillment. It bridges the gap between the stars and the soil.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Closing Quote or Accent -->
+        <div class="mt-24 text-center">
+            <div class="inline-block p-1 rounded-full bg-gradient-to-r from-transparent via-accent-gold/30 to-transparent w-full max-w-xs mb-8"></div>
+            <p class="font-serif italic text-2xl text-accent-gold opacity-90 animate-float">
+                "We are all just stars wrapped in skin."
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Generate decorative stars
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = Math.random() * 2 + 1;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const duration = Math.random() * 3 + 2;
+            const delay = Math.random() * 5;
+
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.setProperty('--duration', `${duration}s`);
+            star.style.animationDelay = `${delay}s`;
+            
+            // Randomly make some stars colored
+            if (Math.random() > 0.8) {
+                star.style.background = '#d4af37';
+            }
+
+            starsContainer.appendChild(star);
+        }
+
+        // Intersection Observer for fade-in effect on cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

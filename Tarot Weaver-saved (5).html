@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redeem and Release Tarot Spread</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cosmic-black': '#05070A',
+                        'midnight-blue': '#0D1B2A',
+                        'deep-purple': '#1B1464',
+                        'mystic-gold': '#D4AF37',
+                        'celestial-silver': '#E0E1DD',
+                        'ethereal-ivory': '#FDFCF0',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1B1464 0%, #0D1B2A 50%, #05070A 100%);
+            background-attachment: fixed;
+            color: #FDFCF0;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .title-glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .sparkle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .divider-gradient {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen">
+
+    <!-- Ambient Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="absolute top-10 left-10 w-64 h-64 bg-deep-purple rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-midnight-blue rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-pulse-slow"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative pt-24 pb-16 px-6 text-center z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center mb-6">
+                <div class="w-16 h-16 border border-mystic-gold/40 rounded-full flex items-center justify-center animate-float">
+                    <svg class="w-8 h-8 text-mystic-gold" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L14.85 8.65L22 9.24L16.5 13.97L18.18 21L12 17.27L5.82 21L7.5 13.97L2 9.24L9.15 8.65L12 2Z" />
+                    </svg>
+                </div>
+            </div>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 title-glow tracking-tight text-ethereal-ivory">
+                Redeem <span class="text-mystic-gold">&</span> Release
+            </h1>
+            <div class="divider-gradient w-48 mx-auto mb-8"></div>
+            <p class="font-sans text-lg md:text-xl text-celestial-silver/80 max-w-2xl mx-auto leading-relaxed italic">
+                A transformative journey designed to guide insights into the sacred process of spiritual redemption and the art of letting go.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 max-w-3xl mx-auto px-6 pb-32">
+        
+        <!-- Introduction Section -->
+        <section class="mb-16 text-center">
+            <div class="glass-card rounded-2xl p-8 border-mystic-gold/20">
+                <h2 class="font-serif text-2xl text-mystic-gold mb-4">The Intention</h2>
+                <p class="text-celestial-silver leading-relaxed font-light">
+                    Redemption is not about erasing the past, but honoring the lessons learned from it. Release is the final act of courage that allows your spirit to soar. Use this spread when you feel weighed down by old narratives or when seeking a fresh path forward.
+                </p>
+            </div>
+        </section>
+
+        <!-- Card Positions Grid (Dynamic/Systematic) -->
+        <div class="space-y-8">
+            
+            <!-- Card 1 -->
+            <article class="glass-card rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="font-serif text-6xl italic text-mystic-gold">01</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-mystic-gold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-px bg-mystic-gold/50"></span>
+                        The Burden of the Past
+                    </h2>
+                    <p class="text-celestial-silver text-lg leading-relaxed">
+                        Identify the specific weight you are currently carrying. This card reveals the cycle, habit, or memory that is ready to be redeemed and transformed into wisdom.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="glass-card rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="font-serif text-6xl italic text-mystic-gold">02</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-mystic-gold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-px bg-mystic-gold/50"></span>
+                        The Act of Redemption
+                    </h2>
+                    <p class="text-celestial-silver text-lg leading-relaxed">
+                        What action or shift in perspective is required to reclaim your power? This represents the 'work'—the internal alchemy that turns your past challenges into your future strengths.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="glass-card rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="font-serif text-6xl italic text-mystic-gold">03</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-mystic-gold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-px bg-mystic-gold/50"></span>
+                        The Gift of Release
+                    </h2>
+                    <p class="text-celestial-silver text-lg leading-relaxed">
+                        What will be liberated once the release is complete? This card symbolizes the space that opens up in your life—new energy, creativity, or emotional freedom that awaits you.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="glass-card rounded-2xl p-8 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <span class="font-serif text-6xl italic text-mystic-gold">04</span>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="font-serif text-2xl md:text-3xl text-mystic-gold mb-4 flex items-center gap-3">
+                        <span class="w-8 h-px bg-mystic-gold/50"></span>
+                        The New Horizon
+                    </h2>
+                    <p class="text-celestial-silver text-lg leading-relaxed">
+                        Your destination after the process. This card offers a glimpse into the person you are becoming as you step out from the shadows of the old and into the light of the new.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Summary / Total Cards Component -->
+        <div class="mt-20 flex flex-col items-center">
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-mystic-gold/30 to-transparent mb-8"></div>
+            <div class="inline-flex items-center gap-4 px-6 py-3 rounded-full border border-mystic-gold/30 bg-mystic-gold/5">
+                <span class="font-serif italic text-mystic-gold text-lg">Four Cards of Intention</span>
+                <span class="w-2 h-2 rounded-full bg-mystic-gold animate-pulse"></span>
+            </div>
+            <p class="mt-6 text-celestial-silver/60 text-sm tracking-widest uppercase">Sacred Spread Composition</p>
+        </div>
+
+    </main>
+
+    <!-- Interactive Script for subtle effects -->
+    <script>
+        // Create subtle background stars/sparkles
+        const createStars = () => {
+            const container = document.body;
+            for (let i = 0; i < 40; i++) {
+                const star = document.createElement('div');
+                star.className = 'sparkle';
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.animation = `pulse ${Math.random() * 3 + 2}s infinite ${Math.random() * 5}s`;
+                container.appendChild(star);
+            }
+        };
+
+        window.onload = createStars;
+    </script>
+</body>
+</html>

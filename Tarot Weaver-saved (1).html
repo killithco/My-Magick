@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Creatures of My Ancestors - Tarot Spread</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            black: '#050508',
+                            midnight: '#0c0c1e',
+                            purple: '#2d1b4e',
+                            indigo: '#1e1b4b',
+                        },
+                        mystic: {
+                            gold: '#d4af37',
+                            silver: '#c0c0c0',
+                            ivory: '#fdfbf7',
+                            emerald: '#064e3b'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at top center, #1e1b4b 0%, #050508 100%);
+            color: #fdfbf7;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-5px) scale(1.01);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .stardust {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .ornament::before, .ornament::after {
+            content: "";
+            height: 1px;
+            width: 50px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-mystic-gold/30 selection:text-mystic-gold">
+
+    <div class="stardust"></div>
+
+    <!-- Header Section -->
+    <header class="relative pt-20 pb-16 px-6 text-center z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center mb-6">
+                <div class="w-16 h-16 border border-mystic-gold/40 rounded-full flex items-center justify-center animate-float">
+                    <svg class="w-8 h-8 text-mystic-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight text-mystic-ivory drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                Mythical Creatures of <span class="text-mystic-gold block md:inline italic">My Ancestors</span>
+            </h1>
+            
+            <div class="ornament">
+                <span class="text-mystic-gold text-xs uppercase tracking-[0.3em]">Celestial Spread Design</span>
+            </div>
+
+            <div class="max-w-2xl mx-auto">
+                <p class="text-lg md:text-xl text-mystic-ivory/80 leading-relaxed font-light italic">
+                    Delve into the rich tapestry of your heritage, connecting with the powerful energies and wisdom of your ancestral lineage through the lens of mythical creatures.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 max-w-4xl mx-auto px-6 pb-24">
+        
+        <!-- Spread Intro Card -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 mb-16 text-center border-t-mystic-gold/30">
+            <h3 class="font-display text-2xl text-mystic-gold mb-6 italic">The Sacred Journey</h3>
+            <p class="text-mystic-ivory/90 leading-relaxed text-lg">
+                This journey helps you understand the unique spiritual gifts, challenges, and guidance that your ancestors offer. It is a four-card spread designed to illuminate your path as you embody their legacy in your current life.
+            </p>
+        </section>
+
+        <!-- Card Grid/List -->
+        <div class="space-y-12">
+            
+            <!-- Card 1 -->
+            <article class="glass-card rounded-2xl flex flex-col md:flex-row overflow-hidden group">
+                <div class="md:w-16 bg-gradient-to-b from-mystic-gold/20 to-transparent flex items-center justify-center py-4 md:py-0">
+                    <span class="font-display text-3xl text-mystic-gold opacity-50 group-hover:opacity-100 transition-opacity">01</span>
+                </div>
+                <div class="p-8 md:p-10 flex-1">
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory mb-4 tracking-wide group-hover:text-mystic-gold transition-colors">
+                        The Guiding Ancestor Spirit
+                    </h2>
+                    <p class="text-mystic-ivory/70 leading-relaxed text-lg">
+                        This card reveals the primary mythical creature or ancestral archetype that is most present or influential in your lineage right now. It represents the overarching energy or wisdom being offered from your ancestors.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="glass-card rounded-2xl flex flex-col md:flex-row overflow-hidden group">
+                <div class="md:w-16 bg-gradient-to-b from-mystic-gold/20 to-transparent flex items-center justify-center py-4 md:py-0">
+                    <span class="font-display text-3xl text-mystic-gold opacity-50 group-hover:opacity-100 transition-opacity">02</span>
+                </div>
+                <div class="p-8 md:p-10 flex-1">
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory mb-4 tracking-wide group-hover:text-mystic-gold transition-colors">
+                        Gifts of the Bloodline
+                    </h2>
+                    <p class="text-mystic-ivory/70 leading-relaxed text-lg">
+                        This card uncovers specific strengths, talents, or protective qualities that have been passed down through your ancestral line, perhaps embodied by another mythical creature.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="glass-card rounded-2xl flex flex-col md:flex-row overflow-hidden group">
+                <div class="md:w-16 bg-gradient-to-b from-mystic-gold/20 to-transparent flex items-center justify-center py-4 md:py-0">
+                    <span class="font-display text-3xl text-mystic-gold opacity-50 group-hover:opacity-100 transition-opacity">03</span>
+                </div>
+                <div class="p-8 md:p-10 flex-1">
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory mb-4 tracking-wide group-hover:text-mystic-gold transition-colors">
+                        Challenges of the Past
+                    </h2>
+                    <p class="text-mystic-ivory/70 leading-relaxed text-lg">
+                        This card illuminates inherited patterns, unresolved issues, or ancestral shadows that may be hindering your progress, symbolized by a creature that presents a test or a lesson.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="glass-card rounded-2xl flex flex-col md:flex-row overflow-hidden group border-b-mystic-gold/30">
+                <div class="md:w-16 bg-gradient-to-b from-mystic-gold/20 to-transparent flex items-center justify-center py-4 md:py-0">
+                    <span class="font-display text-3xl text-mystic-gold opacity-50 group-hover:opacity-100 transition-opacity">04</span>
+                </div>
+                <div class="p-8 md:p-10 flex-1">
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory mb-4 tracking-wide group-hover:text-mystic-gold transition-colors">
+                        Embodying the Legacy
+                    </h2>
+                    <p class="text-mystic-ivory/70 leading-relaxed text-lg">
+                        This card offers guidance on how to integrate the wisdom, overcome the challenges, and fully embrace the gifts of your ancestors, showing you how to walk with their power in your life today, perhaps through a creature that offers a path forward.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Call to Action / Reflection -->
+        <div class="mt-20 text-center">
+            <div class="inline-block p-[1px] rounded-full bg-gradient-to-r from-transparent via-mystic-gold to-transparent mb-8 w-full max-w-sm"></div>
+            <p class="text-mystic-gold/60 font-display italic text-lg animate-pulse-slow">
+                Listen closely to the whispers of the ancients...
+            </p>
+        </div>
+    </main>
+
+    <!-- Subtle Background Elements -->
+    <div class="fixed top-[-10%] right-[-10%] w-[40%] h-[40%] bg-cosmic-purple/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-mystic-emerald/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <script>
+        // Simple scroll animation for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Feng Shui Analysis | Expert Advisor</title>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': '#7D8E7D',
+                        'moss': '#4E5B4E',
+                        'jade-soft': '#F1F4F1',
+                        'terracotta-pale': '#E8D3C3',
+                        'sand': '#F9F7F2',
+                        'charcoal-soft': '#333D33',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.2s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9F7F2; /* sand */
+            color: #333D33; /* charcoal-soft */
+            line-height: 1.7;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(125, 142, 125, 0.2);
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #7D8E7D, transparent);
+            margin: 4rem 0;
+            opacity: 0.3;
+        }
+        /* Custom list markers */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+        }
+        ul li::before {
+            content: "•";
+            color: #7D8E7D;
+            font-weight: bold;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1.75rem;
+            position: absolute;
+            left: 0.5rem;
+        }
+        .recommendation-card {
+            transition: all 0.3s ease;
+        }
+        .recommendation-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(78, 91, 78, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-sage selection:text-white">
+
+    <!-- Header Section -->
+    <header class="pt-20 pb-16 px-6 text-center animate-fade-in">
+        <div class="max-w-3xl mx-auto">
+            <span class="text-sage font-medium tracking-[0.2em] uppercase text-xs mb-4 block">Harmony & Balance</span>
+            <h1 class="font-serif text-4xl md:text-6xl text-moss leading-tight mb-6">
+                Your Personalized <br/>
+                <span class="italic">Feng Shui Analysis</span>
+            </h1>
+            <div class="w-16 h-1 mx-auto bg-terracotta-pale rounded-full"></div>
+        </div>
+    </header>
+
+    <!-- Context Section -->
+    <section class="max-w-4xl mx-auto px-6 mb-20 animate-slide-up" style="animation-delay: 0.2s;">
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-sm border-l-4 border-sage">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h2 class="font-serif text-xl text-moss mb-3">Space Context</h2>
+                    <p class="text-sm uppercase tracking-wider text-sage font-semibold mb-1">Space</p>
+                    <p class="text-lg text-charcoal-soft mb-4 font-light">Bedroom</p>
+                    
+                    <p class="text-sm uppercase tracking-wider text-sage font-semibold mb-1">Orientation</p>
+                    <p class="text-lg text-charcoal-soft font-light">Entrance in West, Main wall Northeast</p>
+                </div>
+                <div class="bg-white/40 p-6 rounded-2xl">
+                    <h2 class="font-serif text-xl text-moss mb-3">Primary Goals</h2>
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-sage/10 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-medium text-moss">Peace & Tranquility</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Analysis Content -->
+    <main class="max-w-3xl mx-auto px-6 pb-32">
+        
+        <!-- Current State Analysis -->
+        <article class="mb-20 animate-slide-up" style="animation-delay: 0.4s;">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="font-serif text-3xl text-moss">Current State Analysis</h2>
+                <div class="flex-grow h-px bg-sage/20"></div>
+            </div>
+            
+            <div class="space-y-6 text-lg text-charcoal-soft font-light leading-relaxed">
+                <p>
+                    The current setup presents significant challenges to your goal of peace and tranquility. The flow of <strong>Chi (energy)</strong> in this room is heavily stagnant and weighed down by visual clutter, dark lighting, and unsettling imagery.
+                </p>
+                <p>
+                    With the entrance in the West, energy naturally enters the room carrying themes of completion and creativity. However, as it moves toward the Northeast main wall—an area traditionally associated with <span class="text-moss font-medium">inner wisdom and spiritual growth</span>—it encounters dense, heavy objects and chaotic decor.
+                </p>
+                <div class="bg-sage/5 border-l-2 border-sage p-6 my-8 italic">
+                    "The room is currently dominated by an extreme Yin state (darkness, heavy fabrics) mixed with aggressive Sha Chi (heavy, negative energy)."
+                </div>
+                <p>
+                    The presence of morbid imagery, such as skulls and bats, introduces an energy of decay and fear, which directly opposes restful tranquility. Furthermore, the storage bins, exposed electronics, draped tapestries, and shelving directly near the sleeping area create subconscious anxiety and pressure. The makeshift window covering (the pink/red blanket) blocks fresh, revitalizing natural light and traps stale energy inside.
+                </p>
+            </div>
+        </article>
+
+        <div class="section-divider"></div>
+
+        <!-- Actionable Recommendations -->
+        <article class="animate-slide-up" style="animation-delay: 0.6s;">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="font-serif text-3xl text-moss">Actionable Recommendations</h2>
+                <div class="flex-grow h-px bg-sage/20"></div>
+            </div>
+
+            <!-- Recommendation Grid/List -->
+            <div class="space-y-12">
+                
+                <!-- Category: Furniture -->
+                <section class="recommendation-card bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="bg-terracotta-pale/30 text-moss font-serif italic px-4 py-1 rounded-full text-sm">Spatial Flow</span>
+                        <h3 class="font-serif text-2xl text-moss">Furniture Placement</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong>The Commanding Position:</strong> Position the head of your bed against the solid Northeast main wall. This grounds your sleep in the energy of inner peace. Ensure the bed has a clear view of the West entrance without being directly in line with the doorway.
+                        </li>
+                        <li>
+                            <strong>Clear Overhead Space:</strong> Remove any shelving, heavy frames, or dense tapestries hanging directly over or behind the bed. Heavy items above the head create "poison arrows" of downward pressure.
+                        </li>
+                        <li>
+                            <strong>Conceal Storage:</strong> Relocate stacked storage bins to a closet, or conceal them behind an opaque, aesthetically pleasing screen to remove the visual weight of "unresolved tasks."
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Category: Color -->
+                <section class="recommendation-card bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="bg-terracotta-pale/30 text-moss font-serif italic px-4 py-1 rounded-full text-sm">Visual Harmony</span>
+                        <h3 class="font-serif text-2xl text-moss">Color Choices</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong>Soothing Earth and Water Tones:</strong> Transition away from stark blacks and harsh reds. Utilize warm beige, muted terracotta, soft taupe, or pale sage green to support the Northeast Earth element.
+                        </li>
+                        <li>
+                            <strong>Bedding:</strong> Replace heavy, mismatched dark blankets with soft, breathable, neutral-colored linens. A cohesive bed invites restful energy.
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Category: Decor -->
+                <section class="recommendation-card bg-white p-8 rounded-3xl shadow-sm border border-stone-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="bg-terracotta-pale/30 text-moss font-serif italic px-4 py-1 rounded-full text-sm">Energy Alignment</span>
+                        <h3 class="font-serif text-2xl text-moss">Decor and Elements</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong>Remove Aggressive Imagery:</strong> Replace skulls and bats with artwork depicting serene landscapes or gentle nature scenes in soothing colors.
+                        </li>
+                        <li>
+                            <strong>Window Treatments:</strong> Install proper light-colored curtains. Open them every morning to allow fresh <strong>Yang energy</strong> (sunlight) to cleanse the room.
+                        </li>
+                        <li>
+                            <strong>Balance the Elements:</strong> Introduce a small, healthy, soft-leafed potted plant (Wood element) and use pottery or natural stones (Earth element) on nightstands for grounding stability.
+                        </li>
+                        <li>
+                            <strong>Soften the Lighting:</strong> Replace harsh electronic lights with warm, ambient fixtures. Turn digital clocks away from your face at night to minimize disruptive Fire energy.
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </article>
+
+        <!-- Final Advisory Note -->
+        <div class="mt-20 text-center animate-fade-in" style="animation-delay: 1s;">
+            <p class="font-serif italic text-sage text-xl">
+                "By harmonizing these elements, you transform your space from a site of stagnation to a sanctuary of restoration."
+            </p>
+        </div>
+
+    </main>
+
+    <script>
+        // Subtle scroll reveal effect for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.recommendation-card').forEach(card => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(20px)";
+            card.style.transition = "all 0.6s ease-out";
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

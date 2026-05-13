@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Wind Control & Manipulation Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mystic-purple': '#4B0082',
+                        'deep-sapphire': '#0F172A',
+                        'forest-shadow': '#064E3B',
+                        'ethereal-white': '#F8FAFC',
+                        'gold-accent': '#D4AF37',
+                        'bronze-accent': '#CD7F32',
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                        accent: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #020617; /* Deep Indigo/Black */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(75, 0, 130, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(15, 23, 42, 0.3) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: #F8FAFC;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #D4AF37, #F8FAFC, #CD7F32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 10px;
+        }
+
+        .wind-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            height: 1px;
+            width: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-gold-accent selection:text-deep-sapphire">
+
+    <!-- Ambient Wind Lines -->
+    <div class="fixed inset-0 overflow-hidden opacity-30 pointer-events-none">
+        <div class="wind-line" style="top: 10%; animation: float 8s infinite linear;"></div>
+        <div class="wind-line" style="top: 40%; animation: float 12s infinite linear reverse;"></div>
+        <div class="wind-line" style="top: 70%; animation: float 10s infinite linear;"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative pt-20 pb-16 px-6 text-center overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="font-accent text-gold-accent tracking-[0.3em] uppercase text-sm mb-4 block animate-pulse-slow">The Elemental Path</span>
+            <h1 class="font-display text-5xl md:text-7xl font-bold mb-6 gradient-text">
+                30-Day Wind Control & Manipulation Challenge
+            </h1>
+            <p class="text-ethereal-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light italic">
+                "To command the wind, one must first become the wind. It is not an act of force, but a symphony of breath, intent, and subtle alignment. Welcome, seeker, to the invisible dance."
+                <span class="block mt-4 font-accent not-italic text-sm text-bronze-accent font-semibold tracking-widest">— THE MENTOR</span>
+            </p>
+        </div>
+        <!-- Decorative Circle -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-mystic-purple/10 rounded-full blur-[100px] -z-10"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Day 1 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent transition-colors">01</span>
+                    <div class="flex items-center gap-2 text-xs font-accent text-ethereal-white/40 uppercase tracking-tighter">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        5 Mins
+                    </div>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Breath Awareness</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Invisible Anchor</p>
+                
+                <div class="space-y-4 text-sm text-ethereal-white/70 leading-relaxed mb-8">
+                    <p>Sit in a quiet room, close eyes, focus on the tip of the nose, observe air entering/leaving without changing pace.</p>
+                    <ul class="list-disc pl-4 space-y-1">
+                        <li>Visualize air as pale blue energy</li>
+                        <li>Maintain for five minutes</li>
+                    </ul>
+                    <div class="bg-red-900/20 border border-red-500/20 p-3 rounded-lg text-xs text-red-200/70">
+                        <strong>Safety:</strong> Sit in a stable chair to avoid falling if lightheaded.
+                    </div>
+                </div>
+
+                <div class="mt-auto space-y-4">
+                    <div class="p-4 bg-mystic-purple/20 rounded-2xl border border-white/5">
+                        <span class="block text-[10px] uppercase tracking-widest text-gold-accent mb-2">Reflection Prompt</span>
+                        <p class="italic text-sm">How does the air feel against your nostrils compared to the air inside your lungs?</p>
+                    </div>
+                    <div class="p-4 bg-deep-sapphire/40 rounded-2xl border border-white/5">
+                        <span class="block text-[10px] uppercase tracking-widest text-bronze-accent mb-2">Discussion</span>
+                        <p class="text-sm">Can you feel the exact moment the inhale becomes an exhale?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">02</span>
+                    <div class="flex items-center gap-2 text-xs font-accent text-ethereal-white/40 uppercase">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        8 Mins
+                    </div>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Rhythmic Lungs</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Four-Fold Breath</p>
+                <div class="space-y-4 text-sm text-ethereal-white/70 leading-relaxed mb-8">
+                    <p>Inhale (4), hold (4), exhale (4), hold empty (4). Repeat 10 times.</p>
+                    <p class="italic">Visualize pulling air from the corners of the room into your center.</p>
+                </div>
+                <div class="mt-auto space-y-4">
+                    <div class="p-4 bg-mystic-purple/20 rounded-2xl border border-white/5">
+                        <span class="block text-[10px] uppercase tracking-widest text-gold-accent mb-2">Reflection</span>
+                        <p class="italic text-sm">Did the air feel heavier or lighter as the exercise progressed?</p>
+                    </div>
+                    <div class="p-4 bg-deep-sapphire/40 rounded-2xl border border-white/5 text-sm">
+                        <span class="block text-[10px] uppercase tracking-widest text-bronze-accent mb-2">Discussion</span>
+                        How does rhythmic breathing change your perception of space?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">03</span>
+                    <div class="flex items-center gap-2 text-xs font-accent text-ethereal-white/40 uppercase">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        10 Mins
+                    </div>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Sensory Awareness</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Skin's Horizon</p>
+                <div class="space-y-4 text-sm text-ethereal-white/70 mb-8">
+                    <p>Stand near a low fan or open window. Focus on microscopic hairs on your arms to track air movement.</p>
+                </div>
+                <div class="mt-auto space-y-4">
+                    <div class="p-4 bg-mystic-purple/20 rounded-2xl border border-white/5 text-sm italic">
+                        Which part of your body is most sensitive to the movement of air?
+                    </div>
+                </div>
+            </div>
+
+            <!-- ... Remaining Days (Day 4 - Day 30) ... -->
+            <!-- Note: For brevity in the template, I will implement a representative selection with full design fidelity -->
+
+            <!-- Day 4: Smoke Visualization -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">04</span>
+                    <span class="text-xs font-accent text-ethereal-white/40 uppercase">12 Mins</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Smoke Visualization</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Serpent's Trail</p>
+                <p class="text-sm text-ethereal-white/70 mb-6 italic">Watch incense smoke coil. Imagine your mind as a tether guiding the plume into spirals.</p>
+                <div class="mt-auto p-4 bg-deep-sapphire/40 rounded-2xl border border-white/5 text-sm">
+                    How does the movement of smoke mirror your thoughts?
+                </div>
+            </div>
+
+            <!-- Day 7 (Featured Highlight) -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group border-gold-accent/30 bg-mystic-purple/5">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent">07</span>
+                    <span class="px-3 py-1 rounded-full bg-gold-accent/10 text-gold-accent text-[10px] uppercase font-bold">Key Milestone</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Incense Dance</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">Dividing the Plume</p>
+                <div class="space-y-4 text-sm text-ethereal-white/70 mb-6">
+                    <p>Place hands 6 inches apart around smoke. Visualize air pressure increasing on one side, pushing smoke to split into two paths.</p>
+                </div>
+                <div class="mt-auto p-4 bg-gold-accent/5 rounded-2xl border border-gold-accent/10 italic text-sm text-gold-accent/90">
+                    "What physical sensations did you feel in your palms during this exercise?"
+                </div>
+            </div>
+
+            <!-- Day 11 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">11</span>
+                    <span class="text-xs font-accent text-ethereal-white/40 uppercase">10 Mins</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Flame Stillness</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Iron Candle</p>
+                <p class="text-sm text-ethereal-white/70 mb-6">Command a flickering candle flame to be still. Imagine air around it thick like glass.</p>
+                <div class="mt-auto p-4 bg-deep-sapphire/40 rounded-2xl border border-white/5 text-sm">
+                    Why does mental focus stabilize physical objects?
+                </div>
+            </div>
+
+            <!-- Day 18 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">18</span>
+                    <span class="text-xs font-accent text-ethereal-white/40 uppercase">20 Mins</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Kinetic Wheel</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">Spinning the Pinwheel</p>
+                <p class="text-sm text-ethereal-white/70 mb-6">Focus on a pinwheel blade. Form a spiral of wind around the center to force a full rotation.</p>
+                <div class="mt-auto p-4 bg-mystic-purple/20 rounded-2xl text-sm italic">
+                    Did the wheel start with a jerk or a smooth glide?
+                </div>
+            </div>
+
+            <!-- Day 24 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">24</span>
+                    <span class="text-xs font-accent text-ethereal-white/40 uppercase">20 Mins</span>
+                </div>
+                <h2 class="font-display text-2xl font-bold mb-2">Calling the Breeze</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">The Invocation</p>
+                <p class="text-sm text-ethereal-white/70 mb-6">Stand outside, whistle a long low note, and visualize a ripple on the horizon rushing toward you.</p>
+                <div class="mt-auto p-4 bg-deep-sapphire/40 rounded-2xl text-sm uppercase tracking-tighter opacity-60">
+                    "Why is sound used to summon the wind?"
+                </div>
+            </div>
+
+            <!-- Day 30 -->
+            <div class="glass-card rounded-3xl p-8 flex flex-col group lg:col-span-1 border-2 border-gold-accent/40 bg-gradient-to-br from-mystic-purple/20 to-deep-sapphire/60">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="font-accent text-4xl font-bold text-gold-accent">30</span>
+                    <div class="animate-bounce">
+                        <svg class="w-8 h-8 text-gold-accent" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    </div>
+                </div>
+                <h2 class="font-display text-3xl font-bold mb-2 gradient-text">The Master's Breath</h2>
+                <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">Total Synthesis</p>
+                <div class="space-y-4 text-sm text-ethereal-white/80 leading-relaxed mb-8">
+                    <p>Combine all learned skills. Stand outside and perform Four-Fold Breath, expand awareness, call a breeze, and guide its direction.</p>
+                    <p class="font-semibold text-gold-accent">Complete the cycle.</p>
+                </div>
+                <div class="mt-auto space-y-4">
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <span class="block text-[10px] uppercase tracking-widest text-gold-accent mb-2">Final Reflection</span>
+                        <p class="italic text-base">"How has your relationship with the air changed over the last 30 days?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Placeholders for 23 other days to ensure layout completeness -->
+            <script>
+                const grid = document.querySelector('main > div');
+                const days = [
+                    { d: 5, t: "Scent Carrying", s: "The Scented Current", i: "Place a strong smell away, sense molecules traveling. Visualize air as a river carrying scent.", m: 10 },
+                    { d: 6, t: "Sitali Focus", s: "The Cooling Breath", i: "Curl tongue, inhale cold air, exhale warmth. Store 'cold' in solar plexus.", m: 6 },
+                    { d: 8, t: "Expansion of Air", s: "The Room Filler", i: "Inhale imagining lungs expanding to room size. Maintain 'oneness' for five minutes.", m: 10 },
+                    { d: 9, t: "Void of Air", s: "The Still Point", i: "Imagine molecules frozen like a lake. Observe total atmospheric stillness.", m: 10 },
+                    { d: 10, t: "Circular Breathing", s: "The Eternal Loop", i: "Seamless transition between inhale/exhale. Spin room air like a whirlpool.", m: 12 },
+                    { d: 12, t: "Flame Pulling", s: "The Leaning Light", i: "Visualize a thread of air pulling flame tip towards you at 45 degrees.", m: 15 },
+                    { d: 13, t: "Feather Hover", s: "The Weightless Focus", i: "Keep a feather aloft using a 'cushion of air' between hand and feather.", m: 15 },
+                    { d: 14, t: "Feather Glide", s: "The Guided Flight", i: "Use finger as a 'rudder' to guide a falling feather to a specific target.", m: 15 },
+                    { d: 15, t: "Palm Sensitivity", s: "The Wind Compass", i: "Feel the 'ball' of air between hands by moving them in circles.", m: 10 },
+                    { d: 16, t: "Creating a Draft", s: "The Doorway Push", i: "Scoop air from one room to another through a doorway. Feel the shift.", m: 15 },
+                    { d: 17, t: "Pushing the Veil", s: "The Hanging Thread", i: "Sharp exhale paired with a palm thrust to move a hanging thread from 2ft away.", m: 15 },
+                    { d: 19, t: "The Sphere of Air", s: "The Protective Bubble", i: "Condense air into a 3ft rotating sphere around your body.", m: 15 },
+                    { d: 20, t: "Indoor Vortex", s: "The Dust Mote Dance", i: "Gather sunbeam dust motes into a swirling vortex using intent.", m: 15 },
+                    { d: 21, t: "Cardinal Sensing", s: "The Four Directions", i: "Identify wind direction outside by feel alone. Rotate to face it.", m: 10 },
+                    { d: 22, t: "Tree Whisper", s: "The Leaf Signal", i: "Ask the wind to move only one specific leaf on a tree.", m: 20 },
+                    { d: 23, t: "Following the Gust", s: "The Wind Rider", i: "Merge energy with a gust and 'ride' it across the landscape in your mind.", m: 15 },
+                    { d: 25, t: "Parting the Air", s: "The Wind Break", i: "Split a steady wind with your hand to create a 'shadow' of calm.", m: 15 },
+                    { d: 26, t: "Weather Vane Focus", s: "The Directing Hand", i: "Direct a flag or vane to hit a point 90 degrees away from current flow.", m: 20 },
+                    { d: 27, t: "The Shifting Gale", s: "The Gust Command", i: "Command a gust to last longer by 'pulling' air from behind it.", m: 15 },
+                    { d: 28, t: "Gathering Clouds", s: "The Cloud Sculptor", i: "Use your eyes to 'stitch' air between clouds to merge or erase them.", m: 20 },
+                    { d: 29, t: "Harmonic Whistling", s: "The Song of the Air", i: "Tune into the wind's note and harmony. Change its pitch with your own.", m: 15 }
+                ];
+
+                // Append remaining days sorted
+                days.forEach(day => {
+                    const card = `
+                    <div class="glass-card rounded-3xl p-8 flex flex-col group order-${day.d}">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-accent text-3xl font-bold text-gold-accent/50 group-hover:text-gold-accent">${day.d < 10 ? '0'+day.d : day.d}</span>
+                            <span class="text-xs font-accent text-ethereal-white/40 uppercase">${day.m} Mins</span>
+                        </div>
+                        <h2 class="font-display text-2xl font-bold mb-2">${day.t}</h2>
+                        <p class="text-xs font-accent text-bronze-accent mb-6 uppercase tracking-widest">${day.s}</p>
+                        <p class="text-sm text-ethereal-white/70 mb-6 leading-relaxed">${day.i}</p>
+                        <div class="mt-auto pt-4 border-t border-white/5">
+                             <div class="flex items-center gap-2 text-gold-accent/60 group-hover:text-gold-accent transition-colors">
+                                <span class="text-[10px] font-bold uppercase tracking-widest">Active Focus Required</span>
+                             </div>
+                        </div>
+                    </div>`;
+                    grid.insertAdjacentHTML('beforeend', card);
+                });
+            </script>
+        </div>
+    </main>
+
+    <!-- Interactive Script for Micro-animations -->
+    <script>
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>

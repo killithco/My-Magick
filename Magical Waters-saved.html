@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Magical Water Ritual - Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mystic: {
+                            50: '#f0f7ff',
+                            100: '#e0f0fe',
+                            200: '#bae2fd',
+                            300: '#7ccbfd',
+                            400: '#37aff9',
+                            500: '#0c94eb',
+                            600: '#0174ca',
+                            700: '#025ca3',
+                            800: '#064f86',
+                            900: '#0b426f',
+                        },
+                        ethereal: {
+                            lavender: '#E6E6FA',
+                            sage: '#D1DBC2',
+                            gold: '#D4AF37',
+                            indigo: '#2E3192',
+                            slate: '#708090'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Cinzel', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(224, 240, 254, 0.5) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(230, 230, 250, 0.5) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(209, 219, 194, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(186, 226, 253, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .ritual-content h2 {
+            font-family: 'Cinzel', serif;
+            color: #0b426f;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            padding-bottom: 0.25rem;
+            font-size: 1.75rem;
+        }
+
+        .ritual-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2E3192;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .ritual-content p {
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+            color: #4a5568;
+        }
+
+        .ritual-content ul, .ritual-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .ritual-content li {
+            margin-bottom: 0.75rem;
+            position: relative;
+        }
+
+        .ritual-content ul li::before {
+            content: "✧";
+            position: absolute;
+            left: -1.5rem;
+            color: #D4AF37;
+        }
+
+        .ritual-content ol {
+            list-style-type: decimal;
+            color: #4a5568;
+        }
+
+        .ritual-content ol li::marker {
+            color: #0c94eb;
+            font-weight: bold;
+        }
+
+        .blessing-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            text-align: center;
+            background: rgba(230, 230, 250, 0.3);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            border-left: 4px solid #D4AF37;
+            line-height: 2;
+            color: #2E3192;
+        }
+
+        .water-glow {
+            box-shadow: 0 0 20px rgba(12, 148, 235, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased selection:bg-mystic-200">
+
+    <div class="max-w-3xl mx-auto px-6 py-12 md:py-20">
+        <!-- Header Section -->
+        <header class="text-center mb-16 animate-fade-in">
+            <div class="inline-block mb-4 animate-float">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="url(#waterGrad)" />
+                    <defs>
+                        <linearGradient id="waterGrad" x1="12" y1="2.69" x2="12" y2="22.69" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#37aff9" />
+                            <stop offset="1" stop-color="#2E3192" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-mystic-900 mb-8 tracking-wider">
+                Your Magical <br/><span class="text-mystic-600">Water Ritual</span>
+            </h1>
+
+            <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 border-t-4 border-t-mystic-400">
+                <div class="text-center">
+                    <span class="block uppercase tracking-widest text-xs font-semibold text-mystic-500 mb-1">Water Type</span>
+                    <span class="font-serif text-2xl text-mystic-800">Healing</span>
+                </div>
+                <div class="hidden md:block h-12 w-px bg-slate-200"></div>
+                <div class="text-center">
+                    <span class="block uppercase tracking-widest text-xs font-semibold text-mystic-500 mb-1">User Intent</span>
+                    <span class="font-serif text-2xl text-mystic-800">To heal</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="animate-fade-in" style="animation-delay: 0.3s;">
+            <article class="ritual-content bg-white/40 rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-sm border border-white/60">
+                
+                <section>
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li><strong>Base:</strong> 2 cups of pure spring water or filtered rainwater (collected during a waxing moon if possible).</li>
+                        <li><strong>Minerals:</strong> One smooth Clear Quartz point (to amplify healing energy) and a small piece of Rose Quartz (to infuse the water with gentle, restorative love).</li>
+                        <li><strong>Botanicals:</strong> 3 fresh Sage leaves (for purification), 1 sprig of fresh Rosemary (for physical strength and memory), and a teaspoon of dried Lavender buds (for emotional peace).</li>
+                        <li><strong>Purifier:</strong> A small pinch of fine sea salt or Himalayan pink salt.</li>
+                        <li><strong>Tools:</strong> A clear glass vessel or mason jar, a blue silk cloth, and a white or blue candle.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li><strong>Cleansing the Vessel:</strong> Before beginning, wash your glass vessel with salt water to remove any lingering energies. Light the white or blue candle to represent the light of health and clarity.</li>
+                        <li><strong>Harmonizing the Elements:</strong> Place the Clear Quartz and Rose Quartz at the bottom of the vessel. Slowly pour the spring water over the stones, visualizing a stream of pure, crystalline light filling the jar.</li>
+                        <li><strong>Infusing the Herbs:</strong> Gently bruise the Sage and Rosemary between your palms to release their essence before placing them into the water. Sprinkle the Lavender buds and the pinch of salt on the surface.</li>
+                        <li><strong>The Incubation:</strong> Cover the jar with the blue silk cloth. Place the vessel in a spot where it can catch the light of the moon for one full night. The moon’s reflective energy is traditionally associated with the ebb and flow of bodily health and emotional restoration.</li>
+                        <li><strong>Straining:</strong> Once the charging period is complete, strain the water through a fine mesh or cheesecloth into a clean bottle, returning the used herbs to the earth.</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Blessings & Charging</h2>
+                    <p>The final stage requires your presence and focus to lock in the healing properties of the elements you have gathered.</p>
+                    
+                    <h3>The Hand Connection</h3>
+                    <p>Place both hands around the vessel, feeling the cool temperature of the water. Close your eyes and visualize a glowing blue light emanating from your palms and saturating the liquid.</p>
+
+                    <h3>The Spoken Blessing</h3>
+                    <div class="blessing-text">
+                        “Water of life, ancient and deep,<br>
+                        Awaken the strength that the spirit does keep.<br>
+                        By stone and by leaf, by salt and by light,<br>
+                        Turn shadow to health and make the soul bright.<br>
+                        Wash away ailment, soothe every pain,<br>
+                        Bring wholeness and vigor like soft summer rain.”
+                    </div>
+                    <p class="text-center text-xs uppercase tracking-widest text-mystic-400 -mt-4 mb-8">Recite these words three times with clear, calm intent</p>
+
+                    <h3>Activation</h3>
+                    <p>The water is now charged. It can be used to anoint the forehead and wrists during recovery, added to a healing bath, or kept on a bedside altar to radiate restorative energy throughout the room. Maintain the intent of <strong>"Becoming Whole"</strong> whenever the water is used.</p>
+                </section>
+
+            </article>
+        </main>
+
+        <div class="mt-12 text-center text-mystic-300 pointer-events-none select-none">
+            <span class="text-2xl italic font-serif">✧ ✧ ✧</span>
+        </div>
+    </div>
+
+    <script>
+        // Subtle interaction for the blessing text
+        const blessingCard = document.querySelector('.blessing-text');
+        blessingCard.addEventListener('mouseenter', () => {
+            blessingCard.style.boxShadow = '0 0 30px rgba(212, 175, 55, 0.15)';
+            blessingCard.style.transition = 'all 0.5s ease';
+        });
+        blessingCard.addEventListener('mouseleave', () => {
+            blessingCard.style.boxShadow = 'none';
+        });
+
+        // Add a soft fade-in effect to paragraphs as they scroll (simple version)
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0');
+            section.style.transform = 'translateY(20px)';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

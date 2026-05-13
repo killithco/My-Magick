@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandala Reflection - Artistic Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;600&family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Bodoni Moda"', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                        accent: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        zen: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            800: '#1f2937',
+                            900: '#111827',
+                        },
+                        gold: '#C5A059'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0c;
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .mandala-container img {
+            width: 100%;
+            height: auto;
+            max-width: 700px;
+            border-radius: 50%;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(197, 160, 89, 0.2);
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mandala-container:hover img {
+            transform: scale(1.02) rotate(2deg);
+        }
+        .emotion-tag {
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.3s ease;
+        }
+        .emotion-tag:hover {
+            border-color: #C5A059;
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+        }
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0c 100%);
+            z-index: -1;
+        }
+        .ornament {
+            height: 1px;
+            width: 60px;
+            background: linear-gradient(90deg, transparent, #C5A059, transparent);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-gold/30">
+
+    <div class="gradient-bg"></div>
+
+    <main class="min-h-screen flex flex-col items-center px-6 py-12 md:py-20 max-w-6xl mx-auto">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-16 animate-fade-in space-y-4" style="animation-delay: 0.2s;">
+            <div class="flex items-center justify-center gap-4 mb-2">
+                <div class="ornament"></div>
+                <span class="font-accent uppercase tracking-[0.4em] text-[10px] text-gold opacity-80">The Art of Stillness</span>
+                <div class="ornament"></div>
+            </div>
+            <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+                Your Mandala Creation
+            </h1>
+            <p class="font-accent font-light text-zen-100/60 max-w-md mx-auto text-sm md:text-base italic">
+                A visual symphony of your internal landscape, captured in geometric harmony.
+            </p>
+        </header>
+
+        <!-- Main Content Area -->
+        <section class="w-full flex flex-col items-center animate-fade-in" style="animation-delay: 0.5s;">
+            
+            <!-- Mandala Image Display -->
+            <div class="mandala-container relative mb-16 md:mb-24 group">
+                <!-- Decorative Ring -->
+                <div class="absolute inset-0 rounded-full border border-gold/10 -m-4 md:-m-8 animate-pulse-slow"></div>
+                <div class="absolute inset-0 rounded-full border border-gold/5 -m-8 md:-m-16 animate-float" style="animation-delay: 1s;"></div>
+                
+                <div class="relative z-10 p-2 bg-gradient-to-tr from-gold/20 via-transparent to-white/10 rounded-full">
+                    <div class="rounded-full overflow-hidden bg-black ring-4 ring-black/50">
+                        <img src='https://opal.google/board/blobs/6605c0fd-f702-4da6-a415-9c4c268fbf9e' alt='media_1' class="block" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Context Section -->
+            <div class="glass-card w-full max-w-2xl rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -ml-16 -mb-16"></div>
+
+                <div class="relative z-10">
+                    <h2 class="font-display text-2xl md:text-3xl mb-8 text-white">Inspired by These Emotions</h2>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+                        <!-- List logic for emotions -->
+                        <span class="emotion-tag px-6 py-2.5 rounded-full text-sm md:text-base font-accent tracking-wide text-zen-100/90 cursor-default">
+                            Thoughtful
+                        </span>
+                        <span class="emotion-tag px-6 py-2.5 rounded-full text-sm md:text-base font-accent tracking-wide text-zen-100/90 cursor-default">
+                            Reflective
+                        </span>
+                        <span class="emotion-tag px-6 py-2.5 rounded-full text-sm md:text-base font-accent tracking-wide text-zen-100/90 cursor-default">
+                            Distant
+                        </span>
+                        <span class="emotion-tag px-6 py-2.5 rounded-full text-sm md:text-base font-accent tracking-wide text-zen-100/90 cursor-default">
+                            Floating
+                        </span>
+                    </div>
+
+                    <div class="mt-12 pt-8 border-t border-white/5 flex flex-col items-center">
+                        <p class="font-body text-zen-100/40 text-xs md:text-sm leading-relaxed max-w-sm">
+                            This composition integrates your current state into a unique fractal pattern designed to evoke tranquility and introspection.
+                        </p>
+                        <button class="mt-8 px-8 py-3 bg-transparent border border-gold/40 text-gold hover:bg-gold hover:text-black transition-all duration-500 rounded-full text-sm tracking-widest uppercase font-accent">
+                            Share Your Journey
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic element for extra visual depth -->
+        <div class="fixed top-1/4 left-10 w-1 h-24 bg-gradient-to-b from-transparent via-gold/10 to-transparent hidden lg:block"></div>
+        <div class="fixed bottom-1/4 right-10 w-1 h-24 bg-gradient-to-b from-transparent via-gold/10 to-transparent hidden lg:block"></div>
+
+    </main>
+
+    <script>
+        // Subtle interaction: subtle tilt based on mouse position
+        document.addEventListener('mousemove', (e) => {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const moveX = (e.clientX - centerX) / 50;
+            const moveY = (e.clientY - centerY) / 50;
+            
+            const mandala = document.querySelector('.mandala-container');
+            if(mandala) {
+                mandala.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
+</body>
+</html>

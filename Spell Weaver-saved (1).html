@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Spell Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+        .gradient-background {
+            background: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6, #a855f7, #d946ef);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glassmorphic-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 12px;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+            color: transparent;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .glow-on-hover {
+            transition: all 0.3s ease;
+        }
+
+        .glow-on-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.4), 0 5px 15px rgba(124, 58, 237, 0.3);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 font-sans antialiased min-h-screen flex items-center justify-center p-6 gradient-background">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'], // Display font for headers
+                        body: ['"Outfit"', 'sans-serif']     // Body font for text
+                    },
+                    colors: {
+                        'primary-purple': '#6366f1', // Indigo-500
+                        'secondary-blue': '#3b82f6', // Blue-500
+                        'accent-pink': '#d946ef',    // Pink-500
+                        'dark-bg': '#18181b',        // Zinc-900
+                        'text-light': '#e2e8f0',     // Slate-200
+                        'text-muted': '#94a3b8',     // Slate-600
+                    },
+                    keyframes: {
+                        'gradient-animation': {
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' }
+                        }
+                    },
+                    animation: {
+                        'gradient-animation': 'gradient-animation 15s ease infinite'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <div class="w-full max-w-4xl mx-auto px-4 py-12">
+        <div class="glassmorphic-card p-8 shadow-xl glow-on-hover">
+            <h1 class="font-display text-5xl sm:text-6xl font-bold text-center mb-4 text-text-light text-stroke">
+                Spellbook Tome
+            </h1>
+            <p class="font-body text-xl sm:text-2xl font-semibold text-center mb-8 text-primary-purple">
+                Arcane Lore & Enchantments
+            </p>
+
+            <div class="mb-8 p-6 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                <h2 class="font-display text-3xl font-bold mb-3 text-secondary-blue">
+                    Spell Title:
+                </h2>
+                <p class="font-body text-2xl font-medium text-text-light">
+                    <span class="text-stroke-title">Return Harm to Aggressor</span>
+                </p>
+            </div>
+
+            <div class="p-6 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                <h2 class="font-display text-3xl font-bold mb-3 text-accent-pink">
+                    Incantation:
+                </h2>
+                <p class="font-body text-lg leading-relaxed text-text-light">
+                    "Whispers of vengeance, echoes of pain,<br>
+                    Let malice rebound, in fury and rain.<br>
+                    To sender returned, with tenfold the might,<br>
+                    Bound by the weave, bathed in karmic light."
+                </p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="font-body text-sm text-text-muted">
+                    *(Generated text intended for arcane reference.)*
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

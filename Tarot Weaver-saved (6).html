@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heal and Break - Tarot Spread</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            950: '#050510',
+                            900: '#0a0a1f',
+                            800: '#111133',
+                            700: '#1a1a4a',
+                        },
+                        mystic: {
+                            purple: '#4b306a',
+                            gold: '#d4af37',
+                            silver: '#c0c0c0',
+                            ivory: '#fdfbf7'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a4a 0%, #0a0a1f 50%, #050510 100%);
+            min-height: 100vh;
+            color: #fdfbf7;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .mystic-gradient-text {
+            background: linear-gradient(to right, #d4af37, #fdfbf7, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 50px 160px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 160px 120px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="font-body selection:bg-mystic-gold selection:text-cosmic-950">
+    
+    <div class="stars"></div>
+
+    <!-- Header Section -->
+    <header class="relative w-full pt-20 pb-16 px-6 text-center z-10">
+        <div class="animate-float mb-4">
+            <svg class="w-12 h-12 mx-auto text-mystic-gold opacity-80" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L14.85 8.15L21.5 9.15L16.75 14L17.85 20.65L12 17.5L6.15 20.65L7.25 14L2.5 9.15L9.15 8.15L12 2Z" />
+            </svg>
+        </div>
+        <h1 class="font-display text-5xl md:text-7xl font-bold mystic-gradient-text mb-6 tracking-tight">
+            Heal and Break
+        </h1>
+        <div class="max-w-2xl mx-auto">
+            <p class="text-mystic-ivory/80 text-lg md:text-xl font-light leading-relaxed italic">
+                This 3-card spread is designed to illuminate pathways towards recovery and the necessary letting go, offering profound insights into your current situation and future steps.
+            </p>
+        </div>
+        <div class="mt-8 flex justify-center space-x-2">
+            <div class="h-[1px] w-12 bg-mystic-gold/40 self-center"></div>
+            <span class="text-mystic-gold text-xs uppercase tracking-[0.3em]">Divination Ritual</span>
+            <div class="h-[1px] w-12 bg-mystic-gold/40 self-center"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative z-10 max-w-4xl mx-auto px-6 pb-24 space-y-12">
+        
+        <!-- Card 1 -->
+        <section class="animate-fade-in-up delay-1">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-mystic-purple/20 rounded-full blur-3xl"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-display text-4xl text-mystic-gold/30">01</span>
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory border-l-2 border-mystic-gold pl-4">
+                        The Wound (What Needs Healing)
+                    </h2>
+                </div>
+                
+                <p class="text-mystic-ivory/90 leading-relaxed text-lg font-light">
+                    This position identifies the core area of your life or psyche that is currently calling for attention. It represents the "break" that hasn't quite fused back together. Whether it's a past trauma, a recent disappointment, or a lingering insecurity, this card brings the source of your discomfort into the light of awareness so the healing process can truly begin.
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-mystic-gold/10 flex justify-between items-center text-xs tracking-widest text-mystic-gold/60 uppercase">
+                    <span>Internal Focus</span>
+                    <span>The Foundation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 2 -->
+        <section class="animate-fade-in-up delay-2">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-mystic-gold/10 rounded-full blur-3xl"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-display text-4xl text-mystic-gold/30">02</span>
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory border-l-2 border-mystic-gold pl-4">
+                        The Break (What to Release)
+                    </h2>
+                </div>
+                
+                <p class="text-mystic-ivory/90 leading-relaxed text-lg font-light">
+                    Healing often requires a clean break from habits, people, or mindsets that are keeping the wound open. This position reveals what you must consciously detach from to move forward. It asks: "What weight are you carrying that no longer serves your journey?" Breaking these ties isn't an end, but a necessary clearing of space for new growth.
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-mystic-gold/10 flex justify-between items-center text-xs tracking-widest text-mystic-gold/60 uppercase">
+                    <span>Active Release</span>
+                    <span>The Catalyst</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 3 -->
+        <section class="animate-fade-in-up delay-3">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-mystic-purple/10 rounded-full blur-[100px] pointer-events-none"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="font-display text-4xl text-mystic-gold/30">03</span>
+                    <h2 class="font-display text-2xl md:text-3xl text-mystic-ivory border-l-2 border-mystic-gold pl-4">
+                        The Mending (The Path Forward)
+                    </h2>
+                </div>
+                
+                <p class="text-mystic-ivory/90 leading-relaxed text-lg font-light">
+                    Finally, we look toward the resolution. This card offers guidance on how to integrate your experiences and find a sense of wholeness once more. It represents the strength gained from the struggle and the specific actions or attitudes that will lead you toward a state of peace. This is the gold that fills the cracks, making the vessel stronger and more beautiful than before.
+                </p>
+
+                <div class="mt-8 pt-6 border-t border-mystic-gold/10 flex justify-between items-center text-xs tracking-widest text-mystic-gold/60 uppercase">
+                    <span>Integration</span>
+                    <span>The Outcome</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Graphic Decoration -->
+        <div class="pt-12 flex justify-center opacity-40">
+            <div class="relative">
+                <div class="w-16 h-16 border border-mystic-gold rotate-45 flex items-center justify-center">
+                    <div class="w-12 h-12 border border-mystic-gold flex items-center justify-center">
+                        <div class="w-2 h-2 bg-mystic-gold rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple observer for entrance animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
